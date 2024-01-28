@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>타이틀</title>
+
+	<!-- 공통 css -->
+	<link rel="stylesheet" href="../css/tm_reset.css">
+	<link rel="stylesheet" href="../css/tm_icon.css">
+	<link rel="stylesheet" href="../css/tm_ui.css">
+
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/layout.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<!-- 라이브러리 -->
+	<link rel="stylesheet" href="../slick/slick.css">
+
+
+	<!-- 공통 js -->
+	<script src="../jquery/jquery-3.7.0.min.js"></script>
+	<script src="../jquery-ui/jquery-ui.min.js"></script>
+	<script src="../js/tm_common.js"></script>
+	<script src="js/template.js"></script>
+	<!-- 라이브러리 -->
+	<script src="../slick/slick.js"></script>
+</head>
+
+<script>
+	$(function () {
+		var how_many_ads = 2; // 불러올 아이프레임의 갯수를 미리 설정 하세요 
+		var now = new Date()
+		var sec = now.getSeconds()
+		var ad = sec % how_many_ads;
+		ad += 1;
+		//-------- 1번째 아이프레임
+		if (ad == 1) {
+			document.getElementById("youtube").innerHTML = '<embed src="https://www.youtube.com/embed/dpdwX9TVO8s?autoplay=1&mute=1&controls=0"/>';
+		}
+		//-------- 2번째 아이프레임
+		else if (ad == 2) {
+			document.getElementById("youtube").innerHTML = '<embed src="https://www.youtube.com/embed/id2q8JxU-YI?autoplay=1&mute=1&controls=0"/>';
+		}
+
+		$(".schedule .slide").each(function () {
+			$(this).slick({
+				infinite: true,
+				autoplay: true,
+				slidesToShow: 4,
+				// slidesToScroll: 4,
+				dots: true,
+				prevArrow: $(this).siblings(".btn").find(".prev"),
+				nextArrow: $(this).siblings(".btn").find(".next"),
+				responsive: [
+					{
+						breakpoint: 1200,
+						settings: {
+							slidesToShow: 3,
+							infinite: true,
+						}
+					},
+					{
+						breakpoint: 801,
+						settings: {
+							variableWidth: true,
+						}
+					}
+				]
+			}).on('afterChange', function () {
+				$(this).parent().find(".btn span").text(($(this).find(".slick-dots .slick-active").index() + 1));
+			});
+			$(this).parent().find(".btn p em").text($(this).find(".slick-dots li").length);
+		});
+
+		$(".main2 .slide").each(function () {
+			$(this).slick({
+				infinite: true,
+				autoplay: true,
+				slidesToShow: 4,
+				// slidesToScroll: 4,
+				dots: true,
+				prevArrow: $(this).siblings(".btn").find(".prev"),
+				nextArrow: $(this).siblings(".btn").find(".next"),
+				responsive: [
+					{
+						breakpoint: 1201,
+						settings: {
+							slidesToShow: 3,
+							infinite: true,
+						}
+					},
+					{
+						breakpoint: 801,
+						settings: {
+							variableWidth: true,
+						}
+					}
+				]
+			}).on('afterChange', function () {
+				$(this).parent().find(".btn span").text(($(this).find(".slick-dots .slick-active").index() + 1));
+			});
+			$(this).parent().find(".btn p em").text($(this).find(".slick-dots li").length);
+		});
+
+		$(".main3 .slide").slick({
+			infinite: true,
+			autoplay: true,
+			slidesToShow: 2,
+			dots: true,
+			prevArrow: $('.main3 .btn .prev'),
+			nextArrow: $('.main3 .btn .next'),
+			responsive: [
+				{
+					breakpoint: 501,
+					settings: {
+						slidesToShow: 1,
+					}
+				}
+			]
+		});
+	});
+</script>
+
+<body>
+	<header>
+		<div class="wrap">
+			<div class="inner fclear">
+				<div class="cover"></div>
+				<div class="top">
+					<ul>
+						<li>
+							<a href="#" class="bg_mint"><img src="images/go01.png" alt="">상주시청</a>
+							<a href="#" class="bg_orange"><img src="images/go02.png" alt="">관광상주</a>
+						</li>
+						<li><button type="button" class="mo_close"><i class="icon_close3"></i></button></li>
+					</ul>
+				</div>
+				<a href="#" class="logo"><img src="images/logo.png" alt="상주시 SANGJU CITY"></a>
+				<ul class="menu">
+					<li class="depth1">
+						<a href="#" title="" target="_blank" class="">축제소개</a>
+						<ul>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">행사개요</a>
+								<ul>
+									<li class="depth3">
+										<a href="#" title="" target="_blank" class="">행사개요</a>
+									</li>
+									<li class="depth3">
+										<a href="#" title="" target="_blank" class="">인사말</a>
+									</li>
+									<li class="depth3">
+										<a href="#" title="" target="_blank" class="">지난행사</a>
+									</li>
+								</ul>
+							</li>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">인사말</a>
+							</li>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">지난행사</a>
+							</li>
+						</ul>
+					</li>
+					<li class="depth1">
+						<a href="#" title="" target="_blank" class="">축제정보</a>
+						<ul>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">행사장 배치도</a>
+							</li>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">오시는 길</a>
+							</li>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">교통안내</a>
+							</li>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">축제리플렛 </a>
+							</li>
+						</ul>
+					</li>
+					<li class="depth1">
+						<a href="#" title="" target="_blank" class="">행사일정</a>
+						<ul>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">행사일정표</a>
+							</li>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">프로그램</a>
+							</li>
+						</ul>
+					</li>
+					<li class="depth1">
+						<a href="#" title="" target="_blank" class="">커뮤니티</a>
+						<ul>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">공지사항</a>
+							</li>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">갤러리</a>
+							</li>
+							<li class="depth2">
+								<a href="#" title="" target="_blank" class="">보도자료</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="right">
+					<a href="#" class="bg_mint"><img src="images/go01.png" alt="">상주시청</a>
+					<a href="#" class="bg_orange"><img src="images/go02.png" alt="">관광상주</a>
+					<button type="button" class="mo_open"><img src="images/menu.png" alt=""></button>
+				</div>
+			</div>
+		</div>
+		<a href="#" class="meta"><img src="images/meta.png" alt="메타버스축제 바로가기"></a>
+	</header>
+	<aside>
+		<img src="images/quick_c.png" alt="">
+		<a href="#" class="bg_red">축제까지<br><em class="fw600">D-19</em></a>
+		<a href="#" class="bg_mint">상주시청<br>바로가기</a>
+		<a href="#" class="bg_orange">관광상주<br>바로가기</a>
+		<button type="button" class="quick_close"><img src="images/quick_close.png" alt="닫기"></button>
+		<button type="button" class="quick_open"><img src="images/quick_open.png" alt="열기"></button>
+	</aside>
+	<main>
+		<div class="main1">
+			<div class="visual">
+				<img src="images/main/visual.png" alt="" class="pc_view">
+				<img src="images/main/visual_m.png" alt="" class="mo_view">
+				<div class="inner">
+					<img src="images/main/banner_logo.png" alt="1st swhf 상주세계모자페스티벌 SANGJU WORLD HAT FESTIVAL 2023.10.13금~2023.10.15일 상주시 태평성대경상감영공원">
+					<div id="youtube" class="pc_view"></div>
+				</div>
+			</div>
+			<div class="mo_aside">
+				<img src="images/quick_c.png" alt="">
+				<div>[축제까지 <em class="fw600">D - 19</em>] </div>
+				<a href="#"><img src="images/meta_m_txt.png" alt=""></a>
+			</div>
+			<div class="schedule">
+				<div class="inner">
+					<h1 class="main_tit">페스티벌 일정 안내</h1>
+					<ul class="com_tab">
+						<li id="tab1" class="active"><button type="button" title="선택됨">2023.10.13 금</button></li>
+						<li id="tab2"><button type="button">2023.10.13 토</button></li>
+						<li id="tab3"><button type="button">2023.10.13 일</button></li>
+					</ul>
+				</div>
+				<div class="inner blank">
+					<div class="tabpanel_wrap">
+						<div id="tab1_panel" class="tabpanel active">
+							<ul class="slide">
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>세계모자 퍼레이드</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>세계모자 퍼레이드</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>댕댕이 모자 파티</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장상주경상감영공원 광장상주경상감영공원 광장상주경상감영공원 광장상주경상감영공원 광장상주경상감영공원 광장상주경상감영공원 광장상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>댕댕이 모자 파티33</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>복식을 활용한 대중가수 공연</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>복식을 활용한 대중가수 공연</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+							</ul>
+							<div class="btn">
+								<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+								<div>
+									<span>1</span>
+									<p>/<em></em></p>
+								</div>
+								<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+							</div>
+						</div>
+						<div id="tab2_panel" class="tabpanel">
+							<ul class="slide">
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>세계모자 퍼레이드222222222</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>댕댕이 모자 파티</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>댕댕이 모자 파티33</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장상주경상감영공원 광장상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>복식을 활용한 대중가수 공연</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>복식을 활용한 대중가수 공연</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+							</ul>
+							<div class="btn">
+								<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+								<div>
+									<span>1</span>
+									<p>/<em></em></p>
+								</div>
+								<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+							</div>
+						</div>
+						<div id="tab3_panel" class="tabpanel">
+							<ul class="slide">
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>세계모자 퍼레이드333333</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>댕댕이 모자 파티</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>댕댕이 모자 파티33</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트벌룬 햇 콘테스트</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>복식을 활용한 대중가수 공연</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<p>09:00 ~ 11:00</p>
+										<h1>복식을 활용한 대중가수 공연</h1>
+										<section>
+											<span><img src="images/main/schedule.png" alt="">상주경상감영공원 광장</span>
+										</section>
+									</a>
+								</li>
+							</ul>
+							<div class="btn">
+								<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+								<div>
+									<span>1</span>
+									<p>/<em></em></p>
+								</div>
+								<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main2">
+			<div class="inner">
+				<h1 class="main_tit">페스티벌 프로그램 안내</h1>
+				<ul class="com_tab">
+					<li id="tab2_1" class="active"><button type="button" title="선택됨">대표행사</button></li>
+					<li id="tab2_2"><button type="button">전시</button></li>
+					<li id="tab2_3"><button type="button">체험</button></li>
+					<li id="tab2_4"><button type="button">공연</button></li>
+					<li id="tab2_5"><button type="button">교류</button></li>
+					<li id="tab2_6"><button type="button">읍면동</button></li>
+				</ul>
+			</div>
+			<div class="inner blank">
+				<div class="tabpanel_wrap">
+					<div id="tab2_1_panel" class="tabpanel active">
+						<ul class="slide">
+							<li>
+								<a href="#">
+									<img src="images/main/visual.png" alt="">
+									<p class="bg_mint category">전시</p>
+									<h1>세계모자 퍼레이드세계모자 퍼레이드세계모자 퍼레이드세계모자 퍼레이드세계모자 퍼레이드세계모자 퍼레이드세계모자 퍼레이드</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_red category">체험</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_purple category">공연</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+						</ul>
+						<div class="btn">
+							<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+							<div>
+								<span>1</span>
+								<p>/<em></em></p>
+							</div>
+							<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+						</div>
+					</div>
+					<div id="tab2_2_panel" class="tabpanel">
+						<ul class="slide">
+							<li>
+								<a href="#">
+									<img src="images/main/program02.jpg" alt="">
+									<p class="bg_mint category">전시</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_red category">체험</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_purple category">공연</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+						</ul>
+						<div class="btn">
+							<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+							<div>
+								<span>1</span>
+								<p>/<em></em></p>
+							</div>
+							<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+						</div>
+					</div>
+					<div id="tab2_3_panel" class="tabpanel">
+						<ul class="slide">
+							<li>
+								<a href="#">
+									<img src="images/main/program03.jpg" alt="">
+									<p class="bg_mint category">전시</p>
+									<h1>벌룬 햇 콘테스트</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_red category">체험</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_purple category">공연</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+						</ul>
+						<div class="btn">
+							<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+							<div>
+								<span>1</span>
+								<p>/<em></em></p>
+							</div>
+							<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+						</div>
+					</div>
+					<div id="tab2_4_panel" class="tabpanel">
+						<ul class="slide">
+							<li>
+								<a href="#">
+									<img src="images/main/program04.jpg" alt="">
+									<p class="bg_mint category">전시</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_red category">체험</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_purple category">공연</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+						</ul>
+						<div class="btn">
+							<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+							<div>
+								<span>1</span>
+								<p>/<em></em></p>
+							</div>
+							<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+						</div>
+					</div>
+					<div id="tab2_5_panel" class="tabpanel">
+						<ul class="slide">
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_mint category">전시</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program04.jpg" alt="">
+									<p class="bg_red category">체험</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_purple category">공연</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+						</ul>
+						<div class="btn">
+							<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+							<div>
+								<span>1</span>
+								<p>/<em></em></p>
+							</div>
+							<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+						</div>
+					</div>
+					<div id="tab2_6_panel" class="tabpanel">
+						<ul class="slide">
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_mint category">전시</p>
+									<h1>댕댕이 모자 파티666</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program02.jpg" alt="">
+									<p class="bg_red category">체험</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_purple category">공연</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<img src="images/main/program01.jpg" alt="">
+									<p class="bg_orange category">교류</p>
+									<h1>댕댕이 모자 파티</h1>
+									<p class="txt">풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회풍선 아티스트 및 일반인의 이색 풍선 모자 만들기 대회</p>
+									<span>2023-05-15</span>
+								</a>
+							</li>
+						</ul>
+						<div class="btn">
+							<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+							<div>
+								<span>1</span>
+								<p>/<em></em></p>
+							</div>
+							<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main3">
+			<div class="inner">
+				<h1 class="main_tit">소식&안내</h1>
+				<div class="notice">
+					<div class="left">
+						<ul class="com_tab">
+							<li id="tab3_1" class="active">
+								<button type="button" title="선택됨">공지사항</button>
+								<a href="#" title="공지사항 더보기" class="more"><i class="icon_plus"></i></a>
+							</li>
+							<li id="tab3_2">
+								<button type="button">보도자료</button>
+								<a href="#" title="보도자료 더보기" class="more"><i class="icon_plus"></i></a>
+							</li>
+						</ul>
+						<div class="tabpanel_wrap">
+							<div id="tab1_panel" class="tabpanel active">
+								<a href="#">
+									<section>
+										<span class="bg_yellow">new</span>
+										<h1>[축제시작] 상주세계모자페스티벌이 시작됩니다.</h1>
+									</section>
+									<p>상주 세계모자 페스티벌이 성황리에 개최되었습니다. 2023년 상주 세계모자페스티벌은 우리 민족이 </p>
+									<em><img src="images/main/cal.png" alt="">2023-10-13</em>
+								</a>
+								<a href="#">
+									<section>
+										<h1>[축제시작] 상주세계모자페스티벌이 시작됩니다.[축제시작] 상주세계모자페스티벌이 시작됩니다.[축제시작] 상주세계모자페스티벌이 시작됩니다.</h1>
+									</section>
+									<p>상주 세계모자 페스티벌이 성황리에 개최되었습니다. 2023년 상주 세계모자페스티벌은 우리 민족이 일찍부터 옷과 관을 반드시 갖추어 입던 예의민족으로, 외국인들 은 우리를 "모자의 나라"로 부르고 조선 사람은 모자를 명예의 상징으로 귀하게 여겼습니다.외국인들 은 우리를 "모자의 나라"로 부르고 조선 사람은 모자를 명예의 상징으로 귀하게 여겼습니다. </p>
+									<em><img src="images/main/cal.png" alt="">2023-10-13</em>
+								</a>
+							</div>
+							<div id="tab2_panel" class="tabpanel">
+								<a href="#">
+									<section>
+										<span class="bg_yellow">new</span>
+										<h1>보도자료 내용</h1>
+									</section>
+									<p>상주 세계모자 페스티벌이 성황리에 개최되었습니다. 2023년 상주 세계모자페스티벌은 우리 민족이 </p>
+									<em><img src="images/main/cal.png" alt="">2023-10-13</em>
+								</a>
+								<a href="#">
+									<section>
+										<h1>[축제시작] 상주세계모자페스티벌이 시작됩니다.[축제시작] 상주세계모자페스티벌이 시작됩니다.[축제시작] 상주세계모자페스티벌이 시작됩니다.</h1>
+									</section>
+									<p>상주 세계모자 페스티벌이 성황리에 개최되었습니다. 2023년 상주 세계모자페스티벌은 우리 민족이 일찍부터 옷과 관을 반드시 갖추어 입던 예의민족으로, 외국인들 은 우리를 "모자의 나라"로 부르고 조선 사람은 모자를 명예의 상징으로 귀하게 여겼습니다.외국인들 은 우리를 "모자의 나라"로 부르고 조선 사람은 모자를 명예의 상징으로 귀하게 여겼습니다. </p>
+									<em><img src="images/main/cal.png" alt="">2023-10-13</em>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="right">
+						<section>
+							<h1>축제 갤러리</h1>
+							<div class="btn">
+								<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+								<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+								<a href="#" title="축제갤러리 더보기" class="more"><i class="icon_plus"></i></a>
+							</div>
+						</section>
+						<div class="slide">
+							<a href="#">
+								<img src="images/main/gallery01.jpg" alt="">
+								<p>2023년 상주세계모자페스티벌 축제상주세계모자페스티벌 축제</p>
+							</a>
+							<a href="#">
+								<img src="images/main/gallery02.jpg" alt="">
+								<p>2023년 상주세계모자페스티벌 축제상주세계모자페스티벌 축제</p>
+							</a>
+							<a href="#">
+								<img src="images/main/gallery01.jpg" alt="">
+								<p>2023년 상주세계모자페스티벌</p>
+							</a>
+							<a href="#">
+								<img src="images/main/gallery02.jpg" alt="">
+								<p>2023년 상주세계모자페스티벌</p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<h1 class="main_tit">오시는길</h1>
+				<div class="map">
+					<ul>
+						<li>
+							<p><img src="images/main/road01.png" alt="">버스 이용 안내</p>
+							<ul>
+								<li>
+									<em class="fw600">상주여자고등학교(우방아파트 방면) -</em> 400,471,912,940,970
+								</li>
+								<li>
+									<em class="fw600">상주여객 버스정류장(상주여자고등학교 방면) -</em> 400,471,912,940,970
+								</li>
+								<li>
+									<em class="fw600">상주여객 버스정류장(외답 방면 방면) -</em> 400,471,912,940,970
+								</li>
+							</ul>
+						</li>
+						<li>
+							<p><img src="images/main/road02.png" alt="">자차 이용 안내</p>
+							<ul>
+								<li>
+									<em class="fw600">태평성대 경상감영공원 -</em> 경북 상주시 삼백로 323
+								</li>
+								<li>
+									<em class="fw600">태평성대 경상감영공원 제2주차장 -</em> 경북 상주시 복룡동 180-2
+								</li>
+								<li>
+									<em class="fw600">태평성대 경상감영공원 제1주차장 -</em> 경북 상주시 삼백로 323
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main4">
+			<div class="inner">
+				<img src="images/menu_bg.png" alt="swhf 상주세계모자페스티벌 SANGJU WORLD HAT FESTIVAL">
+				<ul>
+					<li>
+						<span>행 사 명</span>
+						<p>2023 상주세계모자페스티벌</p>
+					</li>
+					<li>
+						<span>기 간</span>
+						<p>2023. 10. 13.(금) ~ 10. 15.(일) [3일간]</p>
+					</li>
+					<li>
+						<span>장 소</span>
+						<p>상주경상감영공원 일원</p>
+					</li>
+					<li>
+						<span>주 최</span>
+						<p><img src="images/host.png" alt="경상북도 GYEONGSANGBUK-DO / 상주시 SANGJU CITY"></p>
+					</li>
+					<li>
+						<span>주 관</span>
+						<p>상주시축제추진위원회, 경북문화재단(한국한복진흥원)</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="inner">
+			<ul>
+				<li>
+					<img src="images/logo.png" class="logo" alt="상주시 SANGJU CITY">
+					<p>
+						<span>주소: 상주경상감영공원일원</span>
+						<span>TEL: 054-571-7677</span>
+						<span>FAX: 054-571-8678</span>
+					</p>
+					<p>© 2023.Sangju World Hat Festival All rights reserved.</p>
+				</li>
+				<li>
+					<img src="images/host.png" alt="경상북도 GYEONGSANGBUK-DO / 상주시 SANGJU CITY">
+					<a href="#" title="새창열림" target="_blank" class=""><img src="images/facebook.png" alt="페이스북"></a>
+					<a href="#" title="새창열림" target="_blank" class=""><img src="images/instagram.png" alt="인스타그램"></a>
+					<p>
+						<a href="#" title="새창열림" target="_blank">개인정보처리방침</a>
+						<a href="#" title="새창열림" target="_blank">저작권보호정책</a>
+						<a href="#" title="새창열림" target="_blank">상주시청</a>
+						<a href="#" title="새창열림" target="_blank">경상북도</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <!-- 퀵메뉴 -->
+    <div class="quick_wrap">
+        <ul class="quick">
+            <li><a href="#"><em>국가지진<br>센터</em></a></li>
+            <li><a href="#"><em>국가태풍<br>센터</em></a></li>
+            <li><a href="#"><em>일기도</em></a></li>
+            <li><a href="#"><em>일기예보</em></a></li>
+            <li><a href="#"><em>기상특보<br>현황</em></a></li>
+            <li><a href="#"><em>낙뢰</em></a></li>
+            <li><a href="#"><em>위성사례<br>영상</em></a></li>
+            <li><a href="#"><em>위성기본<br>영상</em></a></li>
+            <li><button type="button"><em>서비스<br>바로가기</em></button></li>
+        </ul>
+    </div>
+    <!-- 퀵메뉴 -->
+    <div class="main_bg"><!-- 메인만 들어가는 전체 wrap 오른쪽위 배경때문 -->
+        <!-- 레이아웃 -->
+        <header>
+            <div class="inner">
+                <div class="mo_menu">
+                    <a href="#" target="_blank" title="새창열림" class="logo"><img src="images/logo.png" alt="새바람 행복 경북! 경상북도 재난안전대책본부"></a>
+                    <button type="button" class="open"><img src="images/sitemap.png" alt="메뉴"></button>
+                </div>
+                <ul class="right">
+                    <li><a href="#" target="_blank" title="새창열림">홈으로</a></li>
+                    <li><a href="#" target="_blank" title="새창열림"><img src="images/mn_logo.png" alt="">경상북도청 바로가기</a></li>
+                </ul>
+                <div class="menu">
+                    <div class="mo_top">
+                        <a href="#" target="_blank" title="새창열림">홈으로</a>
+                        <a href="#" target="_blank" title="새창열림"><img src="images/mn_logo_m.png" alt="">경상북도청 바로가기</a>
+                        <button class="close" type="button">
+                            <img src="images/close.png" alt="닫기">
+                        </button>
+                        <ul>
+                            <li>
+                                <img src="images/mo_top1.png" alt="">
+                                내 위치<br>날씨 확인하기
+                            </li>
+                            <li>
+                                <img src="images/mo_top2.png" alt="">
+                                날씨 위성영상<br>확인하기
+                            </li>
+                            <li>
+                                <img src="images/mo_top3.png" alt="">
+                                안전행동요령<br>바로가기
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="depth1 fclear">
+                        <li>
+                            <a href="#" target="_blank" title="새창열림">소 개</a>
+                            <ul class="depth2">
+                                <li><a href="#" target="_blank" title="새창열림" class="current"><em>조직 및 업무</em></a></li>
+                                <!-- 모바일에서 현재페이지 current -->
+                                <li><a href="#" target="_blank" title="새창열림"><em>체계및 기준</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>연락처</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>네트워크</em></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" title="새창열림">기상전망</a>
+                            <ul class="depth2">
+                                <li><a href="#" target="_blank" title="새창열림"><em>강우량현황</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>기상정보</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>기상특보</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>태풍</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>지진/지진해일</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>폭염</em></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" title="새창열림">날씨영상</a>
+                            <ul class="depth2">
+                                <li><a href="#" target="_blank" title="새창열림"><em>위성영상</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>일기도</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>낙뢰</em></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" title="새창열림">안전행동요령</a>
+                            <ul class="depth2">
+                                <li><a href="#" target="_blank" title="새창열림"><em>자연재난 행동요령</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>사회재난 행동요령</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>생활안전 행동요령</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>지진대비 행동요령</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>재난예방대비</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>생활안전지도</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>전시국민행동요령</em></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" title="새창열림">알림마당</a>
+                            <ul class="depth2">
+                                <li><a href="#" target="_blank" title="새창열림"><em>도민안전관리상황</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>풍수해보험</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>지진대피시설</em></a></li>
+                                <li><a href="#" target="_blank" title="새창열림"><em>무더위쉼터</em></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="right fclear">
+                        <a href="#" target="_blank" title="새창열림" class="sitemap"><img src="images/sitemap.png" alt="사이트맵"></a>
+                        <a href="#" target="_blank" title="새창열림" class="search"><img src="images/search.png" alt="검색"></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 레이아웃 -->
+        <!-- 메인컨텐츠 -->
+        <main>
+            <div class="main_top">
+                <div class="inner">
+                    <div class="right">
+                        <img src="images/main/bn_tit.png" alt="경북재난 경상북도 모든재난을 바로 찾아가는 포털사이트 안전포털">
+                        <div>
+                            <span>*1시간마다 정보가 수정됩니다.</span>
+                            <p>2021년 8월 23일 (17시현재)<br><em class="color_blue">경상북도 평균 강수량</em><em class="color_red">8mm</em></p>
+                        </div>
+                        <ul>
+                            <li class="active">
+                                <button type="button">
+                                    <em>
+                                        <img src="images/main/bn01.png" alt="">
+                                    </em>
+                                    강수량
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <em>
+                                        <img src="images/main/bn02.png" alt="">
+                                    </em>
+                                    기온(폭염)
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <em>
+                                        <img src="images/main/bn03.png" alt="">
+                                    </em>
+                                    미세먼지
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="left">
+                        <div class="rain" style="display: block;">
+                            <img src="images/main/basic.png" alt="">
+                            <div class="img">
+                                <!-- 기본이 강수량없음 3단계는 클래스 w1,w2,w3 -->
+                                <img src="images/main/map1_01.png" class="w1" alt="">
+                                <img src="images/main/map1_02.png" class="w2" alt="">
+                                <img src="images/main/map1_03.png" class="w3" alt="">
+                                <img src="images/main/map1_04.png" alt="">
+                                <img src="images/main/map1_05.png" alt="">
+                                <img src="images/main/map1_06.png" alt="">
+                                <img src="images/main/map1_07.png" alt="">
+                                <img src="images/main/map1_08.png" alt="">
+                                <img src="images/main/map1_09.png" alt="">
+                                <img src="images/main/map1_10.png" alt="">
+                                <img src="images/main/map1_11.png" alt="">
+                                <img src="images/main/map1_12.png" alt="">
+                                <img src="images/main/map1_13.png" alt="">
+                                <img src="images/main/map1_14.png" alt="">
+                                <img src="images/main/map1_15.png" alt="">
+                                <img src="images/main/map1_16.png" alt="">
+                                <img src="images/main/map1_17.png" alt="">
+                                <img src="images/main/map1_18.png" alt="">
+                                <img src="images/main/map1_19.png" alt="">
+                                <img src="images/main/map1_20.png" alt="">
+                                <img src="images/main/map1_21.png" alt="">
+                                <img src="images/main/map1_22.png" alt="">
+                                <img src="images/main/map1_23.png" alt="">
+                            </div>
+                            <div class="txt">
+                                <!-- 기본이 강수량없음 3단계는 클래스 w1,w2,w3 -->
+                                <span class="w1">예천 3mm</span>
+                                <span class="w2">울릉/독도 3mm</span>
+                                <span class="w3">울진 3mm</span>
+                                <span>의성 3mm</span>
+                                <span>청도 3mm</span>
+                                <span>청송 3mm</span>
+                                <span>칠곡 3mm</span>
+                                <span>포항 3mm</span>
+                                <span>경산 3mm</span>
+                                <span>경주 3mm</span>
+                                <span>고령 3mm</span>
+                                <span>구미 3mm</span>
+                                <span>군위 3mm</span>
+                                <span>김천 3mm</span>
+                                <span>문경 3mm</span>
+                                <span>봉화 3mm</span>
+                                <span>상주 3mm</span>
+                                <span>성주 3mm</span>
+                                <span>안동 3mm</span>
+                                <span>영덕 3mm</span>
+                                <span>영양 3mm</span>
+                                <span>영주 3mm</span>
+                                <span>영천 3mm</span>
+                            </div>
+                            <p class="color_red"><img src="images/main/alert.png" alt="">호우주의보 발표 : 영천, 청송, 포항, 경주</p>
+                        </div>
+                        <div class="sun">
+                            <img src="images/main/basic.png" alt="">
+                            <div class="txt">
+                                <span class="h1">예천 21.5℃</span>
+                                <span class="h2">울릉/독도 21.5℃</span>
+                                <span class="h3">울진 21.5℃</span>
+                                <span class="h4">의성 21.5℃</span>
+                                <span class="h5">청도 21.5℃</span>
+                                <span>청송 21.5℃</span>
+                                <span>칠곡 21.5℃</span>
+                                <span>포항 21.5℃</span>
+                                <span>경산 21.5℃</span>
+                                <span>경주 21.5℃</span>
+                                <span>고령 21.5℃</span>
+                                <span>구미 21.5℃</span>
+                                <span>군위 21.5℃</span>
+                                <span>김천 21.5℃</span>
+                                <span>문경 21.5℃</span>
+                                <span>봉화 21.5℃</span>
+                                <span>상주 21.5℃</span>
+                                <span>성주 21.5℃</span>
+                                <span>안동 21.5℃</span>
+                                <span>영덕 21.5℃</span>
+                                <span>영양 21.5℃</span>
+                                <span>영주 21.5℃</span>
+                                <span>영천 21.5℃</span>
+                            </div>
+                            <p class="color_red">화상주의보 발표 : 경북지역(김천,구미,칠곡,군위,영천,경산) 자외선 에 조심하시기 바랍니다.</p>
+                        </div>
+                        <div class="dust">
+                            <img src="images/main/basic.png" alt="">
+                            <div class="txt">
+                                <!-- 기본은 파랑 나머진 클래스 -->
+                                <span class="green"><em>120</em>예천</span>
+                                <span class="orange"><em>120</em>울릉/독도</span>
+                                <span class="red"><em>120</em>울진</span>
+                                <span><em>120</em>의성</span>
+                                <span><em>120</em>청도</span>
+                                <span><em>120</em>청송</span>
+                                <span><em>120</em>칠곡</span>
+                                <span><em>120</em>포항</span>
+                                <span><em>120</em>경산</span>
+                                <span><em>120</em>경주</span>
+                                <span><em>120</em>고령</span>
+                                <span><em>120</em>구미</span>
+                                <span><em>120</em>군위</span>
+                                <span><em>120</em>김천</span>
+                                <span><em>120</em>문경</span>
+                                <span><em>120</em>봉화</span>
+                                <span><em>120</em>상주</span>
+                                <span><em>120</em>성주</span>
+                                <span><em>120</em>안동</span>
+                                <span><em>120</em>영덕</span>
+                                <span><em>120</em>영양</span>
+                                <span><em>120</em>영주</span>
+                                <span><em>120</em>영천</span>
+                            </div>
+                            <ul class="color_box">
+                                <li>
+                                    <em class="blue"></em>
+                                    <p>좋음 0~30</p>
+                                </li>
+                                <li>
+                                    <em class="green"></em>
+                                    <p>보통 ~80</p>
+                                </li>
+                                <li>
+                                    <em class="orange"></em>
+                                    <p>나쁨 ~150</p>
+                                </li>
+                                <li>
+                                    <em class="red"></em>
+                                    <p>매우나쁨 151~</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_bot">
+                <div class="inner">
+                    <ul class="com_tab fclear" role="tablist">
+                        <li id="tab1" role="tab" aria-controls="tab-panel1" aria-selected="true" tabindex="0" class="active">자연재난 행동요령</li>
+                        <li id="tab2" role="tab" aria-controls="tab-panel2">사회재난 행동요령</li>
+                        <li id="tab3" role="tab" aria-controls="tab-panel3">생활안전지도</li>
+                    </ul>
+                    <div class="tabpanel_wrap fclear">
+                        <div id="tab-panel1" class="tabpanel active" role="tabpanel" aria-labelledby="tab1">
+                            <div>
+                                <p>재난시, 알아둬야할 행동요령!</p>
+                                <h1><img src="images/main/main_bot_tit01.png" alt="자연재난 행동요령"></h1>
+                                <ul>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon01.png" alt=""></em>
+                                            <span>태풍</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon02.png" alt=""></em>
+                                            <span>낙뢰</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon03.png" alt=""></em>
+                                            <span>강풍</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon04.png" alt=""></em>
+                                            <span>대설</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon05.png" alt=""></em>
+                                            <span>한파</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon06.png" alt=""></em>
+                                            <span>폭염</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon07.png" alt=""></em>
+                                            <span>지진</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon08.png" alt=""></em>
+                                            <span>해일</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon09.png" alt=""></em>
+                                            <span>가뭄</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon10.png" alt=""></em>
+                                            <span>홍수</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tab-panel2" class="tabpanel" role="tabpanel" aria-labelledby="tab2">
+                            <div>
+                                <p>재난시, 알아둬야할 행동요령!</p>
+                                <h1><img src="images/main/main_bot_tit02.png" alt="사회재난 행동요령"></h1>
+                                <ul>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon11.png" alt=""></em>
+                                            <span>화재</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon12.png" alt=""></em>
+                                            <span>산불</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon13.png" alt=""></em>
+                                            <span>폭발</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon14.png" alt=""></em>
+                                            <span>교통사고</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon15.png" alt=""></em>
+                                            <span>전기가스사고</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon16.png" alt=""></em>
+                                            <span>철도,지하철,<br>유·도선 사고</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon17.png" alt=""></em>
+                                            <span>원전사고</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon18.png" alt=""></em>
+                                            <span>금융전산<br>(보이스피싱 등)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon19.png" alt=""></em>
+                                            <span>감염병예방</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank" title="새창열림">
+                                            <em><img src="images/main/main_icon20.png" alt=""></em>
+                                            <span>화학물질사고</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tab-panel3" class="tabpanel" role="tabpanel" aria-labelledby="tab3">
+                            <div>
+                                <p>언제 어디서나 보면서 지키는</p>
+                                <h1><img src="images/main/main_bot_tit03.png" alt="생활안전지도"></h1>
+                                <span>생활 속 안전정보를 확인하여<br>위험과 피해를 예방할 수 있습니다.</span>
+                                <a href="#" target="_blank" title="새창열림">생활안전지도 바로가기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- 메인컨텐츠 -->
+    </div>
+    <!-- 레이아웃 -->
+    <footer>
+        <div class="footer_bn">
+            <div class="btn">
+                <h1>배너모음</h1>
+                <div class="btn">
+                    <button type="button" class="prev"><img src="images/prev_icon.png" alt="이전"></button>
+                    <button class="btn-pause pause" type="button"><img src="images/stop_icon.png" alt="멈춤"></button>
+                    <button class="btn-pause play" type="button"><img src="images/play_icon.png" alt="재생"></button>
+                    <button type="button" class="next"><img src="images/next_icon.png" alt="다음"></button>
+                </div>
+            </div>
+            <div class="slide">
+                <a href="#" target="_blank" title="새창열림">국민안전처</a>
+                <a href="#" target="_blank" title="새창열림">기상청</a>
+                <a href="#" target="_blank" title="새창열림">경북도청</a>
+                <a href="#" target="_blank" title="새창열림">경상북도소방본부</a>
+                <a href="#" target="_blank" title="새창열림">국민안전처</a>
+                <a href="#" target="_blank" title="새창열림">기상청</a>
+                <a href="#" target="_blank" title="새창열림">경북도청</a>
+                <a href="#" target="_blank" title="새창열림">경상북도소방본부</a>
+            </div>
+        </div>
+        <div>
+            <p><em>주소</em> 36759 경상북도 안동시 풍천면 도청대로 45 <br>(<em>대표전화</em> ☎054-80-2313)</p>
+        </div>
+        <div>
+            <p>ⓒ Province of 2021 Gyeongsanbuk-Do. All Right Reserved</p>
+        </div>
+    </footer>
+    <!-- 레이아웃 -->
+</body>
+</html>

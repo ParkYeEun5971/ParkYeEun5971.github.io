@@ -1,0 +1,81 @@
+*{margin:0;padding:0;}
+#recomPro > div.inner{width:100%;padding: 0;}
+#recomPro .slideWrap{position:relative;overflow:hidden;height: 389px;}
+#recomPro .slideWrap p.bg{position:absolute;top:33px;width:179px;height:324px;background:url("http://image.ssgdfs.com/images/newshin/bg_tic_01.png") no-repeat 0 0;}
+#recomPro .slideWrap p.bg.side01{left:0px;}
+#recomPro .slideWrap p.bg.side02{right:-3px;background:url("http://image.ssgdfs.com/images/newshin/bg_tic_02.png") no-repeat 0 0;}
+#recomPro .slideWrap a.bxBtn{position:absolute;z-index:10;top:117px;margin:0;width:21px;height:39px;background:url("http://image.ssgdfs.com/images/newshin/btn_prev_01.png") no-repeat 0 0;text-indent:-9999px;}
+#recomPro .slideWrap a.bxBtn.bx-prev{left:179px;}
+#recomPro .slideWrap a.bxBtn.bx-next{left:auto;right:179px;background:url("http://image.ssgdfs.com/images/newshin/btn_next_01.png") no-repeat 0 0;}
+#recomPro .tickerSlide{position:absolute;top:0px;left:0px;overflow:hidden;-webkit-transition-timing-function: linear; /* Safari and Chrome */transition-timing-function: linear;}
+#recomPro .tickerSlide li{float:left;width: 400px;}
+#recomPro .tickerSlide li img{width:97%;margin:0 auto;border-radius:10px;}
+/* #recomPro .tickerSlide li > a{display:block;}
+#recomPro .tickerSlide li > a p.thum{text-align:center;margin:29px 0 15px 0;}
+#recomPro .tickerSlide li > a p.thum img{width:140px;margin:0 auto;}
+#recomPro .tickerSlide li > a p.txt{height:59px;padding:0 20px;font-size:13px;margin-bottom:12px;text-align:center;color:#424242;line-height:18px;overflow:hidden;}
+#recomPro .tickerSlide li > a p.txt em{display:block;margin-bottom:5px;text-align:center;font-weight:bold;}
+#recomPro .tickerSlide li > a p.price{font-family:Roboto;font-size:16px;color:#e5151a;font-weight:bold;text-align:center;}
+#recomPro .tickerSlide li > a p.price del{display:block;color:#999;font-weight:normal;}
+#recomPro .tickerSlide li > a p.price del span{font-size:18px;}
+#recomPro .tickerSlide li > a p.price span.wp{color:#e5151a;font-size:22px;}
+#recomPro .tickerSlide li > a p.price span.wp span.pr{font-size:22px;color:#e5151a;} */
+.banner{margin-top: 67px;}
+.banner h1{margin-top: 80px;font-size: 42px;font-weight: 900;display: inline-block;width: 100%;}
+.banner p{font-size:18px;line-height: 1.61;color: #495057;margin: 16px 0 140px 0;}
+.sub .area1,.sub .area2,.sub .area3{margin-top: 120px;margin-bottom: 120px;}
+.sub .left{width: calc(50% - 1px);padding-right: 2%;display: inline-block;vertical-align: middle;}
+.sub .left h1{font-size: 32px;font-weight: 900;}
+.sub .left h2{font-size: 18px;line-height: 1.61;color: #495057;margin-top: 16px;}
+.sub .right{width: calc(50% - 2px);padding-left: 0;display: inline-block;vertical-align: middle;text-align: center;}
+.sub .right video{width:80%;border-radius: 10px;}
+.sub .area3 .right{text-align:center;}
+.sub .area3 .right img{padding:0 15px;height: 48px;}
+.sub .area1 .mo{display: none;}
+.pink{background:#fff5f5;text-align:center;padding: 120px 0;}
+.pink br.mo{display:none;}
+.pink h1{margin-top: 35px;font-size: 32px;font-weight: 900;}
+.pink span{line-height: 1.6;color: #495057;font-size: 18px;margin-top: 16px;display: block;}
+.pink span em{color: #000;}
+.pink img{width:200px}
+
+@media(max-width:1110px){
+    .banner h1{font-size: 35px;font-weight: 900;}
+    .sub .left h1{font-size: 29px;}
+    .sub .left h2{font-size:15px;}
+    .sub .area3 .right img{height:40px;}
+}
+@media(max-width:768px){
+    .banner h1{font-size: 24px;}
+    .banner{text-align:center;}
+    .banner p{font-size:13px;margin-bottom: 50px;}
+    #recomPro .tickerSlide li{float:left;width: 280px;}
+    #recomPro .slideWrap{height: 272px;}
+    .sub .area1,.sub .area2,.sub .area3{display: inline-block;margin-top: 50px;margin-bottom: 50px;width: 100%;}
+    .sub .area1{margin-top:100px;}
+    .sub .left h1{font-size: 20px;}
+    .sub .left h2{font-size:13px;margin-top: 10px;}
+    .sub .area3 .right img{height: 27px;}
+    .pink img{display:none;}
+    .pink{padding:50px 0;}
+    .pink h1{margin-top: 0;font-size:20px;}
+    .pink span{font-size:13px;}
+}
+@media(max-width:550px){
+    .sub .left{margin-bottom:50px;}
+    .sub .left,.sub .right{width:100%;text-align:center;padding:0;}
+    #recomPro .tickerSlide li{float:left;width: 240px;}
+    #recomPro .slideWrap{height: 232px;}
+    .sub .area3 .right img{height: 35px;}
+    .pink br.mo{display:block;}
+}
+
+
+
+
+
+
+
+
+
+

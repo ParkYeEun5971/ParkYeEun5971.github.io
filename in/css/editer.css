@@ -1,0 +1,275 @@
+@CHARSET "UTF-8";
+
+html, body{height:100%}
+.edit_container{position:relative;width:100%;height:500px;border:1px solid #666;;overflow-y:auto;}
+.edit_container .overlay{position:fixed;width:100%;height:100%;left:0;top:0;background:rgba(3, 3, 3, 0.6);z-index:99}
+
+.edit_toolbar{margin-bottom:10px;border-bottom:1px solid #666;background-color:#f6f6f6}
+.edit_toolbar button.tool{background:transparent;border:0;padding:0;width:40px;height:40px;font-size:28px;border-radius:5px;margin:5px;}
+.edit_toolbar button.tool i:before{font-size: 25px;font-weight: 900;}
+.edit_toolbar button:hover.tool{background:#ccc;}
+
+.edit_toolbar > section{display:none;background:#fff;border:1px solid #bbb;padding: 15px;z-index:9999;position:fixed;width: 45%;height: auto;left: 50%;top: 50%;transform: translate(-50%,-50%);}
+.edit_toolbar ol{display:inline-block;background:#fff;min-width:90px;}
+.edit_toolbar ol li{border-bottom:1px solid #ddd;text-align:center;}
+.edit_toolbar ol li.active > ol{display:block;}
+.edit_toolbar ol li:last-child{border-bottom:0;}
+.edit_toolbar ol button{padding:5px;display:block;width:100%;}
+.edit_toolbar ol button:not(.btn):hover{background:#5d81bc;color:#fff;}
+.edit_toolbar ol li.active > button:not(.link_btn,.dwl_btn,.btn){background:#5d81bc;color:#fff;}
+.edit_toolbar section > ol ol{position:absolute;left:105%;top:0;display:none;}
+
+.edit_toolbar .section_layout ol{width:100%;}
+.edit_toolbar .section_layout ol .radio1{display:inline-flex;gap:5px;margin-bottom:10px;align-items:start;position:relative;width:calc(50% - 5px);}
+.edit_toolbar .section_layout ol .radio1 input[type='radio']{margin-top:3px; /* display: none; */position:absolute;top:11px;left:10px;accent-color:#ff5400;}
+.edit_toolbar .section_layout ol .radio1 input[type='radio']:checked + label .percent{display:block;}
+.edit_toolbar .section_layout ol .radio1 label{flex-grow:1;margin:0;text-align:left;border:1px solid #bbb;padding:10px;cursor:pointer;border-radius:5px;}
+.edit_toolbar .section_layout ol .radio1 input[type='radio']:checked + label{background:#3e8af7;color:#fff;}
+.edit_toolbar .section_layout ol label div{border:1px solid #ddd;padding:3px;display:flex;border-radius:5px;gap:3px;margin-top:5px;background:#fff;color:#555;}
+.edit_toolbar .section_layout ol label div span{background:#9fc7ff;border:1px dashed #ddd;padding:5px;text-align:center;flex-grow:1;margin-bottom:0;color:#000;font-weight:600;}
+.edit_toolbar .section_layout ol .percent{margin-top:5px;display:none;}
+.edit_toolbar .section_layout ol .percent div{gap:3px;margin-top:5px;}
+.edit_toolbar .section_layout ol .percent p{border:1px solid #ddd;flex-grow:1;display:flex;padding:3px;margin:0;align-items: center;gap: 5px;}
+.edit_toolbar .section_layout ol .percent p + p{margin-left:1px;}
+.edit_toolbar .section_layout ol .percent p input{display:inline-block;width:30px;vertical-align:top;flex-grow:1;}
+
+.btn-primary{background:#0075ff;color:#fff;border-radius:5px;}
+.btn-danger{background:#f72929;color:#fff;border-radius:5px;}
+
+.edit_wrap .edit_toolbar > section{padding:0;width:auto;border:0;}
+.edit_wrap .edit_toolbar > section ol{border:1px solid #ddd;}
+.choice1_2 > ol{max-height:270px;overflow-y:scroll;}
+.choice1_3{width:300px}
+.choice1_3 p{margin:0 !important;text-align:left;}
+.choice1_3 button:hover p{mix-blend-mode:plus-lighter;}
+.choice2_2{padding:5px;width:300px;}
+.choice2_2 input{padding:5px;border:1px solid #3e8af7;width:100%;background:#f2f6f9;border-radius:5px;}
+.choice3_2{margin:5px;width:300px;}
+.choice3_2 .radio1{position:relative;margin-top:20px;}
+.choice3_2 .radio1 label{border:1px solid #bbb;padding:10px;cursor:pointer;border-radius:5px;text-align:left;}
+.choice3_2 .radio1 [type='radio']:checked + label{background:#3e8af7;color:#fff;}
+.choice3_2 .radio1 input[type='radio']{margin-top:3px; /* display: none; */position:absolute;top:11px;left:10px;accent-color:#ff5400;}
+.choice3_3{padding:5px;width:270px;}
+.choice3_3 > input{padding:5px;border:1px solid #3e8af7;width:100%;background:#f2f6f9;border-radius:5px;}
+.choice3_3 div{display:flex;margin:8px 0;gap:7px;align-items:center;}
+.choice3_3 div input{border:1px solid #ddd;flex-grow:1;padding:3px;}
+.choice4_2{padding:5px;width:150px;}
+.choice4_3 input{padding:5px;border:1px solid #3e8af7;width:100%;background:#f2f6f9;border-radius:5px;}
+.choice4_3{padding:5px;width:250px;}
+.indent_li{background:#2b333e;color:#fff;left:-29px;position:absolute;top:0px;z-index:9;display:none;}
+.indent_li button{padding:5px 10px;width:100%;text-align:left;}
+.indent_li li{border-bottom:1px solid rgba(999, 999, 999, 0.5);}
+.indent_li:hover{display:block;}
+
+.edit_contents_wrap{position:relative;display:flex;padding:0 5px;gap:5px;border:2px solid #fff}
+/*.edit_contents_wrap:hover{border:2px solid #ff00bf}*/
+.edit_contents_wrap > span.btn_move{text-align:right;position:absolute;top:0;right:0;z-index:100;}
+.edit_contents_wrap > span.btn_move i{font-size:20px;}
+.edit_contents_wrap .edit_contents > span.btn_move{text-align:right;position:absolute;top:0;left:0;z-index:100;}
+.edit_contents_wrap .edit_contents > span.btn_move i{font-size:13px;}
+
+.edit_contents{position:relative;padding:3px;border:1px dashed #aaa;margin:5px 0;min-height:50px;}
+.edit_contents .indent_btn{position:absolute;left:-29px;top:0;background:#2b333e;border-radius:5px;padding:3px;}
+.edit_contents .indent_btn:hover + .indent_li{display:block}
+.edit_contents .indent_btn *{display:block;}
+.edit_contents .edit_toolbar{margin-bottom:0;}
+.edit_contents.active{ /* margin-bottom: 20px; */z-index:5;border:0;}
+.edit_contents .edit_btn #back,
+.edit_contents .edit_btn #save{display:none}
+.edit_contents.active .edit_btn #back,
+.edit_contents.active .edit_btn #save{display:inline-block;}
+.edit_contents.active .edit_btn #del,
+.edit_contents.active .edit_btn #edit{display:none;}
+.edit_contents.active:hover, .edit_contents.active:focus{border:0;}
+.edit_contents:hover .edit_btn,
+.edit_contents.active .edit_btn{display:block;}
+.edit_btn{position:absolute;bottom:-40px;display:none;left:0;padding-top:15px;width:100%;}
+
+/*.edit_contents_wrap:hover, .edit_contents_wrap:focus, .edit_contents_wrap.active{border:1px solid #ddd; !* padding: 3px; *!align-items:self-start;}*/
+/*.edit_contents_wrap.active .edit_contents{border:1px dashed #ddd;}*/
+/*.edit_contents_wrap.active .edit_contents.active{border:0;}*/
+/*.edit_contents_wrap{display:flex;border:1px solid #ddd;padding:0 5px;gap:5px;}*/
+/*.edit_contents_wrap .edit_contents:hover, .edit_contents_wrap.active .edit_contents.active{margin-bottom:45px;}*/
+/*.edit_contents_wrap .edit_contents:hover.active{ !* margin-bottom: 20px; *!}*/
+.edit_contents .contents_plus{display:none;}
+.edit_contents:hover .contents_plus{display:block;}
+
+.edit_contents .edit_contents_toolbar{display:flex;position:absolute;bottom: -50px;left:-1px;background: #f6f6f6;gap:5px;padding: 5px 5px;border:1px solid #ccc;z-index:100;}
+.edit_contents .edit_contents_toolbar button{width:30px;height: 30px;font-size:20px;border-radius: 500px;}
+.edit_contents .edit_contents_toolbar button:hover, .edit_contents .edit_contents_toolbar button.selected{background-color:#ccc}
+.edit_contents .edit_contents_toolbar i:before{font-size: 18px;font-weight: 900;display: block;}
+
+.edit_contents .edit_contents_toolbar > li > section{display:none;background:#fff;z-index:9999;position:fixed;width: 45%;height: auto;left: 50%;top: 50%;transform: translate(-50%,-50%);}
+.edit_contents .edit_contents_toolbar > li ol{display:inline-block;background: #F2F6F9;min-width: 120px;border-right: 1px solid #ccc;height: 100%;position: relative;}
+.edit_contents .edit_contents_toolbar > li ol>li{text-align: left;padding: 6px;}
+.edit_contents .edit_contents_toolbar > li ol>li.active > ol{display:block;}
+.edit_contents .edit_contents_toolbar > li ol>li:last-child{border-bottom:0;}
+.edit_contents .edit_contents_toolbar > li ol button{padding: 3px;display:block;width:100%;height:auto;font-size:1em;}
+.edit_contents .edit_contents_toolbar > li ol button:not(.edit_close):hover{background:#3e8af7;color:#fff;}
+.edit_contents .edit_contents_toolbar > li ol>li.active > button:not(.link_btn,.dwl_btn,.btn){background:#3e8af7;color:#fff;}
+.edit_contents .edit_contents_toolbar > li section > ol ol{position:absolute;left: 101%;top:0;display:none;}
+.edit_contents .edit_contents_toolbar > li section > ol .edit_paragraph,.edit_contents .edit_contents_toolbar > li section > ol .edit_paragraph li{margin-top: 5px;margin-bottom: 5px;text-align: left;}
+.edit_contents .edit_contents_toolbar > li section > ol.last_content{background:#fff;}
+
+.edit_contents_wrap > .edit_contents > .edit_paragraph{position:relative;border:1px dashed #bbb;}
+
+/*.contents_plus{vertical-align:middle;font-size:17px;font-weight:600;color:#000;}
+.contents_plus span{font-size:35px;border:1px solid #ddd;line-height:0;padding:15px 7px 24px;vertical-align:middle;margin-right:10px;display:inline-block;}
+.contents_plus:hover span{background:#3e8af7;color:#fff;}*/
+
+span.btn_move{cursor:move !important}
+
+.drag-placeholder{border:2px dashed #999;padding:50px;background-color:#eee;margin:10px}
+.none{display:none !important}
+
+/* START TOOLTIP STYLES */
+[tooltip]{
+	position:relative; /* opinion 1 */
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after{
+	text-transform:none; /* opinion 2 */
+	font-size:.5em; /* opinion 3 */
+	line-height:1;
+	user-select:none;
+	pointer-events:none;
+	position:absolute;
+	display:none;
+	opacity:0;
+}
+[tooltip]::before{
+	content:'';
+	border:5px solid transparent; /* opinion 4 */
+	z-index:1001; /* absurdity 1 */
+}
+[tooltip]::after{
+	content:attr(tooltip); /* magic! */
+
+	/* most of the rest of this is opinion */
+	font-family:Helvetica, sans-serif;
+	text-align:center;
+
+	/*
+	  Let the content set the size of the tooltips
+	  but this will also keep them from being obnoxious
+	  */
+	min-width:3em;
+	max-width:21em;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	padding:1ch 1.5ch;
+	border-radius:.3ch;
+	box-shadow:0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+	background:#333;
+	color:#fff;
+	z-index:1000; /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after{
+	display:block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after{
+	display:none !important;
+}
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^='up']::before{
+	bottom:100%;
+	border-bottom-width:0;
+	border-top-color:#333;
+}
+[tooltip]:not([flow])::after,
+[tooltip][flow^='up']::after{
+	bottom:calc(100% + 5px);
+}
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^='up']::before,
+[tooltip][flow^='up']::after{
+	left:50%;
+	transform:translate(-50%, -.5em);
+}
+
+/* FLOW: DOWN */
+[tooltip][flow^='down']::before{
+	top:100%;
+	border-top-width:0;
+	border-bottom-color:#333;
+}
+[tooltip][flow^='down']::after{
+	top:calc(100% + 5px);
+}
+[tooltip][flow^='down']::before,
+[tooltip][flow^='down']::after{
+	left:50%;
+	transform:translate(-50%, .5em);
+}
+
+/* FLOW: LEFT */
+[tooltip][flow^='left']::before{
+	top:50%;
+	border-right-width:0;
+	border-left-color:#333;
+	left:calc(0em - 5px);
+	transform:translate(-.5em, -50%);
+}
+[tooltip][flow^='left']::after{
+	top:50%;
+	right:calc(100% + 5px);
+	transform:translate(-.5em, -50%);
+}
+
+/* FLOW: RIGHT */
+[tooltip][flow^='right']::before{
+	top:50%;
+	border-left-width:0;
+	border-right-color:#333;
+	right:calc(0em - 5px);
+	transform:translate(.5em, -50%);
+}
+[tooltip][flow^='right']::after{
+	top:50%;
+	left:calc(100% + 5px);
+	transform:translate(.5em, -50%);
+}
+
+/* KEYFRAMES */
+@keyframes tooltips-vert{
+	to{
+		opacity:.9;
+		transform:translate(-50%, 0);
+	}
+}
+
+@keyframes tooltips-horz{
+	to{
+		opacity:.9;
+		transform:translate(0, -50%);
+	}
+}
+
+/* FX All The Things */
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^='up']:hover::before,
+[tooltip][flow^='up']:hover::after,
+[tooltip][flow^='down']:hover::before,
+[tooltip][flow^='down']:hover::after{
+	animation:tooltips-vert 300ms ease-out forwards;
+}
+
+[tooltip][flow^='left']:hover::before,
+[tooltip][flow^='left']:hover::after,
+[tooltip][flow^='right']:hover::before,
+[tooltip][flow^='right']:hover::after{
+	animation:tooltips-horz 300ms ease-out forwards;
+}

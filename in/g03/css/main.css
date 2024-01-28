@@ -1,0 +1,97 @@
+main {background: #a4d444 url(../images/main/bg.jpg) no-repeat top;background-size: 100%;} 
+
+.banner { border-radius: 20px; width: calc(100% - 600px); box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); height: 620px; position: relative; display: inline-block; overflow: hidden; } 
+.banner img {max-width:none;display: block;min-width: 100%;min-height: 100%;} 
+
+.information { width: 575px; display: inline-block; margin-left: 20px; vertical-align: top; } 
+.information .day {border-radius: 15px;box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);position: relative;} 
+.information .day .top:before{content:"";width: 95%;height:1px;border-top: 20px dotted #a4d444;position:absolute;left: 2.5%;top: 9px;}
+.information .day .top:after{content:"";width: 100%;height:1px;border-top: 1px solid #0E88B7;position:absolute;left: 0;top: 40px;}
+.information .day .top {display: inline-grid;grid-template-columns: 160px 1fr;align-items: center;padding: 13px 25px;padding-bottom: 2px;padding-top: 52px;width: 100%;background: #fff;border-radius: 15px 15px 0 0;position: relative;} 
+.information .day .top h1 {font-size: 30px;line-height: 1.1;vertical-align: middle;font-weight: 500;} 
+.information .day .top h1 em { font-weight: 100; display: block; } 
+.information .day .top p {background-size: 100% 100%;font-size: 85px;text-align: center;padding: 0;vertical-align: middle;color: #062D66;font-weight: 500;} 
+.information .day .top p span {color: #ffd01f;font-weight: 500;} 
+.information .day .bottom {background: #3364C3;border-radius: 0 0 15px 15px;padding: 13px 18px;position: relative;} 
+.information .day .bottom:before {content:"";width: 24px;height: 38px;background: url(../images/main/board_bg.png) no-repeat center;position: absolute;background-size: 100%;top: 5px;left: 19px;}
+.information .day .bottom li {display: grid;grid-template-columns: 30% 1fr;} 
+.information .day .bottom li+li { margin-top: 10px; } 
+.information .day .bottom p {background: #FFD01F;color: #062D66;font-size: 23px;padding: 19px 10px;text-align: center;padding-top: 21px;box-shadow: inset -4px -4px 10px rgba(0,0,0,0.1);font-weight: 500;} 
+.information .day .bottom span {font-weight: 100;background: #fff;padding: 10px 15px 7px 15px;font-size: 22px;display: flex;align-items: center;position: relative;} 
+.information .day .bottom span:before{content:"";width: 0px;height: 0px;border-top: 20px solid  transparent;border-bottom: 20px solid #3364c3;border-right: 20px solid none;border-left: 20px solid  transparent;position: absolute;right: 0;bottom: 0;}
+.information .day .bottom span br{display:none;}
+.information .notice {background: #fff;border-radius: 15px;margin-top: 20px;padding: 20px 15px;box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);} 
+.information .notice h1 {font-size: 31px;color: #062D66;font-weight: 400;} 
+.information .notice h1 a { font-size: 15px; font-weight: 600; float: right; padding: 3px 2px; padding-bottom: 0; } 
+.information .notice h1 a:hover { transform: rotate(180deg); transition: transform 0.5s; } 
+.information .notice .date { background: #3568CB; color: #fff; border-radius: 10px 0 0 0; padding: 10px 3px 2px; text-align: center; width: 70px; flex-shrink: 0; } 
+.information .notice .date p { font-size: 29px; line-height: 1; } 
+.information .notice .date a { flex:0; } 
+.information .notice .date span { font-size: 13px; font-weight: 100; } 
+.information .notice li {display:flex;gap: 15px;align-items: center;padding: 2px 0;position: relative;} 
+.information .notice li:first-child {padding-bottom:15px;border-bottom: 1px dashed #999;margin-bottom: 12px;padding-top: 6px;} 
+.information .notice li a { display: block; width: calc(100% - 90px); } 
+.information .notice li a:hover p { color:#3568CB; } 
+.information .notice li a p { font-weight:100; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; -o-text-overflow: ellipsis; -ms-text-overflow: ellipsis; font-size: 20px; width: 100%; height: 28px; } 
+.information .notice li a span { font-weight:100; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; -o-text-overflow: ellipsis; -ms-text-overflow: ellipsis; opacity: 0.8; width: 100%; display: block; height: 23px; } 
+.information .notice li+li a{width: calc(100% - 60px);padding-left: 10px;}
+.information .notice li+li a:before{content:"";width:2px;height:2px;background:#000;position:absolute;left: 2px;top: 14px;}
+.information .notice li+li span {position:absolute;right:0;width: auto;white-space: initial;text-overflow: initial;top: 50%;transform: translateY(-50%);} 
+
+.quick { display: inline-grid; grid-template-columns: repeat(6,1fr); gap:15px; margin-top: 15px; margin-bottom: 60px; width: 100%; } 
+.quick a { background: #fff; border-radius: 10px; text-align: center; padding: 15px 0; font-size:24px; box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2); } 
+.quick a:hover { background: #3568CB url(../images/main/quick_bg.png) no-repeat top left; color:#fff; } 
+.quick a img { margin: 0 auto; margin-bottom: 10px; } 
+
+@media(max-width:1350px){
+	.banner { width: calc(100% - 542px); } 
+	.information { width: 518px; } 
+	.information .day .bottom span { font-size:20px; } 
+}
+
+@media(max-width: 1200px){
+	.banner { width:100%; height: auto; } 
+	.banner img { width: 100%; } 
+	.information{margin-left:0;margin-top: 15px;width: 100%;}
+	.information .day{display: grid;grid-template-columns: 1fr 1fr;gap: 10px;box-shadow: none;}
+	.information .day .top{padding: 13px 25px;border-radius: 15px;padding-top: 57px;}
+	.quick a{font-size:22px}
+	.information .day .top p{font-size: 70px;}
+	.information .day .bottom span{font-size: 19px;}
+}
+@media(max-width: 1024px){
+	.information .day{display: block;box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);}
+	.information .day .top{display: block;text-align: center;border-radius: 15px 15px 0 0;padding-top: 41px;padding-bottom: 6px;}
+	.information .day .top h1{display: inline-block;padding-right: 30px;font-size: 25px;padding-top: 15px;}
+	.information .day .top p{display: inline-block;padding: 20px 30px 0px 25px;font-size: 60px;}
+	.information .day .bottom p{font-size:20px;}
+	.information .day .bottom span{font-size:17px;justify-content: center;}
+	.information .notice h1{font-size:25px;}
+	.information .notice li a p{font-size:17px;height: 20px;}
+	.information .notice li a span{height:20px;padding-top: 3px;}
+	.information .notice li+li a:before{top:10px;}
+	.quick {grid-template-columns: repeat(3,1fr);}
+	.quick a{font-size:20px}
+	
+}
+@media(max-width: 600px){
+	.quick a{font-size:17px;}
+	.quick a img{width:80px;}
+}
+@media(max-width: 500px){
+	.information .day .top{padding-bottom: 0;padding-left: 0;padding-right: 0;}
+	.information .day .top h1{display: inline-block;padding-right: 20px;font-size: 22px;padding-top: 5px;}
+	.information .day .top p{display: inline-block;padding: 14px 20px 5px 15px;font-size: 45px;padding-right: 0;}
+	.information .day .bottom span br{display:block;}
+	.information .notice .date{width:60px}
+	.information .notice .date p{font-size:22px;}
+	.information .notice .date span{font-size:13px;}
+	.information .notice li a {display: block;width: calc(100% - 75px);} 
+}
+@media(max-width: 400px){
+	.quick {grid-template-columns: repeat(2,1fr);gap: 10px;margin-bottom: 30px;}
+	.information .day .bottom p{padding: 19px 4px;font-size: 18px;}
+	.information .day .bottom li {display: grid;grid-template-columns: 90px 1fr;} 
+	.information .day .bottom span{padding: 10px 10px 7px 10px;font-size: 15px;}
+	.information .day .top h1{padding-right:0;}
+}

@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* FONT STYLE */
+   @font-face {
+      font-family: 'SUIT';
+      font-style: normal;
+      font-weight: 200;
+      src: url(../font/SUIT-ExtraLight.woff2) format('woff2'),
+           url(../font/SUIT-ExtraLight.otf) format('opentype');
+   }
+   @font-face {
+      font-family: 'SUIT';
+      font-style: normal;
+      font-weight: 300;
+      src: url(../font/SUIT-Light.woff2) format('woff2'),
+           url(../font/SUIT-Light.otf) format('opentype');
+   }
+   @font-face {
+      font-family: 'SUIT';
+      font-style: normal;
+      font-weight: 400;
+      src: url(../font/SUIT-Regular.woff2) format('woff2'),
+           url(../font/SUIT-Regular.otf) format('opentype');
+   }
+  @font-face {
+     font-family: 'SUIT';
+     font-style: normal;
+     font-weight: 500;
+     src: url(../font/SUIT-Medium.woff2) format('woff2'),
+          url(../font/SUIT-Medium.otf) format('opentype');
+   }
+  @font-face {
+     font-family: 'SUIT';
+     font-style: normal;
+     font-weight: 600;
+     src: url(../font/SUIT-SemiBold.woff2) format('woff2'),
+          url(../font/SUIT-SemiBold.otf) format('opentype');
+   }
+  @font-face {
+     font-family: 'SUIT';
+     font-style: normal;
+     font-weight: 700;
+     src: url(../font/SUIT-Bold.woff2) format('woff2'),
+          url(../font/SUIT-Bold.otf) format('opentype');
+   }
+  @font-face {
+     font-family: 'SUIT';
+     font-style: normal;
+     font-weight: 900;
+     src: url(../font/SUIT-ExtraBold.woff2) format('woff2'),
+          url(../font/SUIT-ExtraBold.otf) format('opentype');
+   }
+*:not(div){transition: color 0.3s, background 0.3s;}
+*{-webkit-print-color-adjust:exact;}
+
+/* RESET */ 
+html { font-family: 'SUIT'; -webkit-text-size-adjust: none; font-size: 17px; letter-spacing: -0.7px; -webkit-overflow-scrolling: touch; font-weight: 500;line-height: 1.4;word-break: break-all;word-wrap: break-word;}
+/* 해당페이지폰트로 설정 */
+html body { min-width: 320px; }
+
+html, body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, fieldset, input, select, label, textarea, table, caption, thead, tfoot, tbody, tr, th, td { margin: 0; padding: 0; -webkit-text-size-adjust: none; }
+
+address { font-stretch: normal; }
+
+b, span, strong, input, a, button { font-size: inherit; font-family: inherit; color: inherit; line-height: inherit; box-sizing: border-box;}
+
+article, aside, footer, header, section, footer, nav, figure, hgroup, details, summary, figure, figcaption { display: block; }
+
+button{ border: none; background: none;}
+
+select {-webkit-appearance: none;-moz-appearance: none;appearance: none;border: 1px solid #D7D7D7; background: url(../images/select_icon.png) no-repeat; background-position: calc(100% - 9px);background-position : -webkit-calc(100% - 9px); background-position :-moz-calc(100% - 9px);padding-right: 23px!important;font-family: inherit;font-size: inherit;padding-left: 10px;}
+
+select option{color: #000;}
+
+select::-ms-expand { display: none; }
+
+cite { display: inline; }
+
+html, body { height: 100%; }
+
+html { -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; }
+
+body {overflow-y: auto;margin: 0px;background-attachment: fixed;}
+
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
+img { border: 0; max-width: 100%; }
+
+div { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+label, input, textarea {vertical-align: middle;border: 0;border-radius: 0;font-family: inherit;font-size: inherit;}
+
+input, textarea{border: 1px solid #D7D7D7;box-sizing: border-box;}
+
+ol, ul { list-style: none; margin: 0; padding: 0; }
+
+li { list-style: none; }
+
+table { border-collapse: collapse; table-layout: fixed; width: 100%; }
+
+fieldset { border: none; }
+
+legend { position: absolute; left: -1000%; width: 1px; height: 1px; font-size: 0; line-height: 0; overflow: hidden; }
+
+caption { font-size: 0; height: 0; opacity: 0; }
+
+button { margin: 0; padding: 0; cursor: pointer; display: inline-block; }
+
+em, address { font-style: normal; }
+
+strong { font-weight: normal; }
+
+a img,button img{display: block;}
+
+a,button,select,textarea{line-height: inherit;}
+
+/* 스크롤 숨길때 */
+/* select { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+select::-ms-expand { display: none; } */
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #888888; }
+input::-moz-placeholder, textarea::-moz-placeholder { color: #888888; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #888888; }
+input:-moz-placeholder, textarea:-moz-placeholder { color: #888888; }
+
+caption { overflow: hidden; width: 0; height: 0; text-indent: -9999em; }
+
+/* 접근성 준수하게 숨길때 */
+.hidden { overflow: hidden;border: 0;position: absolute;width: 1px;height: 1px;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
+
+/* 접근성 관계없이 숨길때 */
+.blind { visibility: hidden;border: 0;position: absolute;width: 1px;height: 1px;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%); }
+
+/* 스크롤 커스텀 */
+/* *::-webkit-scrollbar {width: 10px;}
+*::-webkit-scrollbar-thumb {background: rgba(9, 9,9, 0.2); border-radius: 10px; }
+*::-webkit-scrollbar-track {background: rgba(255, 255, 255, 1);} */
+
+@media (max-width: 1024px) { html {font-size: 15px;} }
+/* @media (max-width: 770px) { html { font-size: 13px; } } */
+@media (max-width: 450px) { html { font-size: 14px; } }
+/* @media (max-width: 375px) { html { font-size: 10px; } } */
+/* @media (max-width: 321px) { html { font-size: 9px; } } */
+/* 해당페이지반응형px로설정 이대로 설정해도 무관 */

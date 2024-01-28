@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>타이틀</title>
+
+	<!-- 공통 css -->
+	<link rel="stylesheet" href="../css/tm_reset.css">
+	<link rel="stylesheet" href="../css/tm_icon.css">
+	<link rel="stylesheet" href="../css/tm_ui.css">
+
+	<link rel="stylesheet" href="./css/common.css">
+	<link rel="stylesheet" href="./css/layout.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<!-- 라이브러리 -->
+	<link rel="stylesheet" href="../slick/slick.css">
+
+	<!-- 공통 js -->
+	<script src="../jquery/jquery-3.7.0.min.js"></script>
+	<script src="../jquery-ui/jquery-ui.min.js"></script>
+	<script src="../js/tm_common.js"></script>
+	<script src="js/fullpage.js"></script>
+	<script src="js/template.js"></script>
+	<!-- 라이브러리 -->
+	<script src="../slick/slick.js"></script>
+</head>
+<script>
+	$(function () {
+		// 풀페이지
+		fullpage.initFullpage($("#fullpageWrap"));
+		// 첫시작시 슬라이드 텍스트효과
+		$(".main1 .slide .inner .txt1,.main1 .slide .inner .txt2").css({ transform: "translateY(-50px)", opacity: 0, transition: "all 1.5s", "transition-delay": "0.3s" });
+		setTimeout(function () {
+			$(".main1 .slide .inner .txt1,.main1 .slide .inner .txt2").css({ transform: "translateY(0px)", opacity: 1 });
+			$(".main1 .slide .inner .txt1,.main1 .slide .inner .txt2").css({ transform: "", opacity: "", transition: "", "transition-delay": "" });
+		}, 250);
+
+		$(".main1 .slide").slick({
+			infinite: true,
+			autoplay: true,
+			slidesToShow: 1,
+			dots: true,
+			fade: true,
+			autoplaySpeed: 5000,
+			prevArrow: $('.main1 .btn .prev'),
+			nextArrow: $('.main1 .btn .next'),
+		}).on('afterChange', function () {
+			$(".main1 .btn span").text($(".main1 .slick-dots .slick-active").index() + 1);
+			$(".main1 .btn ul li").removeClass("active");
+			$(".main1 .btn ul li").eq($(".main1 .slick-dots .slick-active").index()).addClass("active");
+		});
+		$(".main1 .btn p em").text($(".main1 .slick-dots li").length);
+		$('.main1 .btn .pause').click(function () {
+			$('.main1 .slide').slick('slickPause');
+			$(this).css("display", "none");
+			$('.main1 .btn .play').css("display", "inline-flex");
+		});
+		$('.main1 .btn .play').click(function () {
+			$('.main1 .slide').slick('slickPlay');
+			$(this).css("display", "none");
+			$('.main1 .btn .pause').css("display", "inline-flex");
+		});
+		var v_pager = 0;
+		for (var i = 1; i <= $(".main1 .slick-dots li").length; i++) {
+			$(".main1 .btn ul").append("<li></li>")
+		}
+		$(".main1 .btn ul li").eq($(".main1 .slick-dots .slick-active").index()).addClass("active");
+
+
+		$(".card_slide .pc_slide .slide").slick({
+			infinite: true,
+			autoplay: true,
+			slidesToShow: 1,
+			dots: true,
+			autoplaySpeed: 5000,
+			centerMode: true,
+			centerPadding: 0,
+			prevArrow: $('.card_slide .pc_slide .btn .prev'),
+			nextArrow: $('.card_slide .pc_slide .btn .next'),
+		}).on('afterChange', function () {
+			$(".card_slide .pc_slide .btn span").text($(".card_slide .pc_slide .slick-dots .slick-active").index() + 1);
+			$(".card_slide .pc_slide .btn ul li").removeClass("active");
+			$(".card_slide .pc_slide .btn ul li").eq($(".card_slide .pc_slide .slick-dots .slick-active").index()).addClass("active");
+		}).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+			if (currentSlide !== nextSlide) {
+				$('.slick-center + .slick-cloned').each(function (index, node) {
+					var $node = $(node);
+
+					setTimeout(function () {
+						$node.addClass('slick-current');
+						$node.addClass('slick-center');
+					});
+				});
+			}
+		});
+		$(".card_slide .pc_slide .btn p em").text($(".card_slide .pc_slide .slick-dots li").length);
+		$('.card_slide .pc_slide .btn .pause').click(function () {
+			$('.card_slide .pc_slide .slide').slick('slickPause');
+			$(this).css("display", "none");
+			$('.card_slide .pc_slide .btn .play').css("display", "inline-flex");
+		});
+		$('.card_slide .pc_slide .btn .play').click(function () {
+			$('.card_slide .pc_slide .slide').slick('slickPlay');
+			$(this).css("display", "none");
+			$('.card_slide .pc_slide .btn .pause').css("display", "inline-flex");
+		});
+		var v_pager = 0;
+		for (var i = 1; i <= $(".card_slide .pc_slide .slick-dots li").length; i++) {
+			$(".card_slide .pc_slide .btn ul").append("<li></li>")
+		}
+		$(".card_slide .pc_slide .btn ul li").eq($(".card_slide .pc_slide .slick-dots .slick-active").index()).addClass("active");
+
+		$(".card_slide .mo_slide .slide").slick({
+			infinite: true,
+			autoplay: true,
+			slidesToShow: 1,
+			dots: true,
+			autoplaySpeed: 5000,
+			variableWidth: true,
+			prevArrow: $('.card_slide .mo_slide .btn .prev'),
+			nextArrow: $('.card_slide .mo_slide .btn .next'),
+		}).on('afterChange', function () {
+			$(".card_slide .mo_slide .btn span").text($(".card_slide .mo_slide .slick-dots .slick-active").index() + 1);
+			$(".card_slide .mo_slide .btn ul li").removeClass("active");
+			$(".card_slide .mo_slide .btn ul li").eq($(".card_slide .mo_slide .slick-dots .slick-active").index()).addClass("active");
+		}).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+			if (currentSlide !== nextSlide) {
+				$('.slick-center + .slick-cloned').each(function (index, node) {
+					var $node = $(node);
+
+					setTimeout(function () {
+						$node.addClass('slick-current');
+						$node.addClass('slick-center');
+					});
+				});
+			}
+		});
+		$(".card_slide .mo_slide .btn p em").text($(".card_slide .mo_slide .slick-dots li").length);
+		$('.card_slide .mo_slide .btn .pause').click(function () {
+			$('.card_slide .mo_slide .slide').slick('slickPause');
+			$(this).css("display", "none");
+			$('.card_slide .mo_slide .btn .play').css("display", "inline-flex");
+		});
+		$('.card_slide .mo_slide .btn .play').click(function () {
+			$('.card_slide .mo_slide .slide').slick('slickPlay');
+			$(this).css("display", "none");
+			$('.card_slide .mo_slide .btn .pause').css("display", "inline-flex");
+		});
+		var v_pager = 0;
+		for (var i = 1; i <= $(".card_slide .mo_slide .slick-dots li").length; i++) {
+			$(".card_slide .mo_slide .btn ul").append("<li></li>")
+		}
+		$(".card_slide .mo_slide .btn ul li").eq($(".card_slide .mo_slide .slick-dots .slick-active").index()).addClass("active");
+
+		$("#tab2_panel .slide").slick({
+			infinite: true,
+			autoplay: false,
+			slidesToShow: 4,
+			dots: true,
+			prevArrow: $('#tab2_panel .prev'),
+			nextArrow: $('#tab2_panel .next'),
+			responsive: [
+				{
+					breakpoint: 1501,
+					settings: {
+						slidesToShow: 3,
+						infinite: true,
+					}
+				},
+				{
+					breakpoint: 1201,
+					settings: {
+						slidesToShow: 2,
+						infinite: true,
+					}
+				},
+				{
+					breakpoint: 501,
+					settings: {
+						slidesToShow: 1,
+						infinite: true,
+					}
+				}
+			]
+		});
+
+		$("#tab3_panel .slide").slick({
+			infinite: true,
+			autoplay: false,
+			slidesToShow: 4,
+			dots: true,
+			prevArrow: $('#tab3_panel .prev'),
+			nextArrow: $('#tab3_panel .next'),
+			responsive: [
+				{
+					breakpoint: 1501,
+					settings: {
+						slidesToShow: 3,
+						infinite: true,
+					}
+				},
+				{
+					breakpoint: 1201,
+					settings: {
+						slidesToShow: 2,
+						infinite: true,
+					}
+				},
+				{
+					breakpoint: 501,
+					settings: {
+						slidesToShow: 1,
+						infinite: true,
+					}
+				}
+			]
+		});
+
+		$(".sns_left .slide").slick({
+			infinite: true,
+			autoplay: false,
+			slidesToShow: 2,
+			dots: true,
+			prevArrow: $('.sns_left .prev'),
+			nextArrow: $('.sns_left .next'),
+			responsive: [
+				{
+					breakpoint: 551,
+					settings: {
+						slidesToShow: 1,
+						infinite: true,
+					}
+				}
+			]
+		}).on('afterChange', function () {
+			$(".sns_left .btn span").text($(".sns_left .slick-dots .slick-active").index() + 1);
+			$(".sns_left .btn ul li").removeClass("active");
+			$(".sns_left .btn ul li").eq($(".sns_left .slick-dots .slick-active").index()).addClass("active");
+		});
+		$(".sns_left .btn p em").text($(".main1 .slick-dots li").length);
+		$('.sns_left .btn .pause').click(function () {
+			$('.sns_left .slide').slick('slickPause');
+			$(this).css("display", "none");
+			$('.sns_left .btn .play').css("display", "inline-flex");
+		});
+		$('.sns_left .btn .play').click(function () {
+			$('.sns_left .slide').slick('slickPlay');
+			$(this).css("display", "none");
+			$('.sns_left .btn .pause').css("display", "inline-flex");
+		});
+
+		$(".noti_right .slide").slick({
+			infinite: true,
+			autoplay: false,
+			slidesToShow: 1,
+			dots: true,
+			prevArrow: $('.noti_right .prev'),
+			nextArrow: $('.noti_right .next'),
+		}).on('afterChange', function () {
+			$(".noti_right .btn span").text($(".noti_right .slick-dots .slick-active").index() + 1);
+			$(".noti_right .btn ul li").removeClass("active");
+			$(".noti_right .btn ul li").eq($(".noti_right .slick-dots .slick-active").index()).addClass("active");
+		});
+		$(".noti_right .btn p em").text($(".main1 .slick-dots li").length);
+		$('.noti_right .btn .pause').click(function () {
+			$('.noti_right .slide').slick('slickPause');
+			$(this).css("display", "none");
+			$('.noti_right .btn .play').css("display", "inline-flex");
+		});
+		$('.noti_right .btn .play').click(function () {
+			$('.noti_right .slide').slick('slickPlay');
+			$(this).css("display", "none");
+			$('.noti_right .btn .pause').css("display", "inline-flex");
+		});
+
+		$(".map_txt button").click(function () {
+			$(".main3 .left ."+$(this).attr("class")).css("display","block").siblings().css("display","")
+			$(".map_img ."+$(this).attr("class")).addClass("active").siblings().removeClass("active");
+			$(".map_txt button").removeClass("active");
+			$(".map_txt ."+$(this).attr("class")).addClass("active");
+		});
+
+		$(".main1 .quick_menu").click(function () {
+			if ($(this).find("ul").hasClass("show")) {
+				$(this).find("ul").css("display", "").removeClass("show");
+			} else {
+				$(this).find("ul").css("display", "flex").addClass("show");
+			}
+		});
+	});
+</script>
+
+<body>
+	<header>
+		<div class="wrap">
+			<div class="inner fclear">
+				<a href="#" class="logo"><img src="images/logo.png" alt="도민을 행복하게 경제를 튼튼하게 경북신용보증재단"></a>
+				<div class="top">
+					<img src="images/logo.png" alt="도민을 행복하게 경제를 튼튼하게 경북신용보증재단" class="logo">
+					<button type="button" class="mo_close" title="닫기"><i class="icon_close2"></i></button>
+				</div>
+				<div class="mid">
+					<button type="button" class="search_open" title="검색열기"><i class="icon_search1"></i>통합검색</button>
+					<button type="button"><i class="icon_sitemenu"></i>사이트맵</button>
+					<button type="button" class="pop_open" title="팝업보기"><img src="images/pop_open_m.png" alt="">팝업</button>
+				</div>
+				<ul class="menu">
+					<li class="depth1">
+						<a href="#">신용보증</a>
+						<ul>
+							<li class="depth2">
+								<a href="#"><span>신용보증안내</span></a>
+								<ul>
+									<li class="depth3">
+										<a href="#"><span>보증이용절차</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>대상기업 및 제한기업</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>보증종류</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>심사기준</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>보증료</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>대출기한 연장 및 재발급</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>자가진단리스트</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증기업유의사항</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증상품현황</span></a>
+								<ul>
+									<li class="depth3">
+										<a href="#"><span>보증상품현황</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>경상북도 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>시군 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>정부 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>금융기관 협약보증</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증상담예약</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>비대면 보증신청</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>금리알리미</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>환급보증료조회</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>자료실</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="depth1">
+						<a href="#">재단스토리</a>
+						<ul>
+							<li class="depth2">
+								<a href="#"><span>보증상담예약</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>비대면 보증신청</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>금리알리미</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>환급보증료조회</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>자료실</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="depth1">
+						<a href="#">열린경영</a>
+						<ul>
+							<li class="depth2">
+								<a href="#"><span>신용보증안내3</span></a>
+								<ul>
+									<li class="depth3">
+										<a href="#"><span>보증이용절차</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>대상기업 및 제한기업</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>보증종류</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>심사기준</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>보증료</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>대출기한 연장 및 재발급</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>자가진단리스트</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증기업유의사항</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증상품현황</span></a>
+								<ul>
+									<li class="depth3">
+										<a href="#"><span>보증상품현황</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>경상북도 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>시군 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>정부 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>금융기관 협약보증</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증상담예약</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>비대면 보증신청</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>금리알리미</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>환급보증료조회</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>자료실</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="depth1">
+						<a href="#">창업지원</a>
+						<ul>
+							<li class="depth2">
+								<a href="#"><span>신용보증안내4</span></a>
+								<ul>
+									<li class="depth3">
+										<a href="#"><span>보증이용절차</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>대상기업 및 제한기업</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>보증종류</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>심사기준</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>보증료</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>대출기한 연장 및 재발급</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>자가진단리스트</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증기업유의사항</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증상품현황</span></a>
+								<ul>
+									<li class="depth3">
+										<a href="#"><span>보증상품현황</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>경상북도 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>시군 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>정부 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>금융기관 협약보증</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증상담예약</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>비대면 보증신청</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>금리알리미</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>환급보증료조회</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>자료실</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="depth1">
+						<a href="#">고객광장</a>
+						<ul>
+							<li class="depth2">
+								<a href="#"><span>신용보증안내5</span></a>
+								<ul>
+									<li class="depth3">
+										<a href="#"><span>보증이용절차</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>대상기업 및 제한기업</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>보증종류</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>심사기준</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>보증료</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>대출기한 연장 및 재발급</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>자가진단리스트</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증기업유의사항</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증상품현황</span></a>
+								<ul>
+									<li class="depth3">
+										<a href="#"><span>보증상품현황</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>경상북도 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>시군 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>정부 특례보증</span></a>
+									</li>
+									<li class="depth3">
+										<a href="#"><span>금융기관 협약보증</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>보증상담예약</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>비대면 보증신청</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>금리알리미</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>환급보증료조회</span></a>
+							</li>
+							<li class="depth2">
+								<a href="#"><span>자료실</span></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="search">
+					<span>통합검색</span>
+					<input type="text" placeholder="검색어를 입력해 주세요" title="검색어를 입력해 주세요">
+					<button type="button" class="search_close" title="닫기"><i class="icon_close2"></i></button>
+				</div>
+				<button type="button" class="pop_open" title="팝업보기"><img src="images/pop_open.png" alt="POPUP"></button>
+				<a href="#" class="sitemap" title="사이트맵"><i class="icon_sitemenu"></i></a>
+				<button type="button" class="sitemap mo_open" title="메뉴"><i class="icon_sitemenu"></i></button>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="fullpageWrap" id="fullpageWrap">
+			<div class="main1 fullpage page">
+				<div class="slide">
+					<div>
+						<div class="inner">
+							<img class="txt1" src="images/main/visual_txt01.png" alt="소기업·소상공인을 위한 든든한 버팀목 경북신용보증재단이 함께합니다.">
+							<img class="txt2" src="images/main/visual_txt02.png" alt="경북 소상공인과 소규모 사업자들을 위한 든든한 버팀목이 되어 지역 경제의 성장을 이루어내고 도민 삶의 질 향상에 앞장서겠습니다.">
+						</div>
+						<img src="images/main/visual01.jpg" alt="" class="w600n">
+						<img src="images/main/visual01_m.jpg" alt="" class="w600v">
+					</div>
+					<div>
+						<div class="inner">
+							<img class="txt1" src="images/main/visual_txt01.png" alt="소기업·소상공인을 위한 든든한 버팀목 경북신용보증재단이 함께합니다.">
+							<img class="txt2" src="images/main/visual_txt02.png" alt="경북 소상공인과 소규모 사업자들을 위한 든든한 버팀목이 되어 지역 경제의 성장을 이루어내고 도민 삶의 질 향상에 앞장서겠습니다.">
+						</div>
+						<img src="images/main/visual02.jpg" alt="" class="w600n">
+						<img src="images/main/visual02_m.jpg" alt="" class="w600v">
+					</div>
+					<div>
+						<div class="inner">
+							<img class="txt1" src="images/main/visual_txt01.png" alt="소기업·소상공인을 위한 든든한 버팀목 경북신용보증재단이 함께합니다.">
+							<img class="txt2" src="images/main/visual_txt02.png" alt="경북 소상공인과 소규모 사업자들을 위한 든든한 버팀목이 되어 지역 경제의 성장을 이루어내고 도민 삶의 질 향상에 앞장서겠습니다.">
+						</div>
+						<img src="images/main/visual03.jpg" alt="" class="w600n">
+						<img src="images/main/visual03_m.jpg" alt="" class="w600v">
+					</div>
+				</div>
+				<div class="inner">
+					<div class="btn">
+						<button type="button" class="prev" title="이전"><i class="icon_left3_2"></i></button>
+						<button class="btn-pause pause" type="button" title="멈춤"><i class="icon_stop3_2"></i></button>
+						<button class="btn-pause play" type="button" style="display: none;" title="재생"><i class="icon_play3_2"></i></button>
+						<ul></ul>
+						<div>
+							<span>1</span>
+							<p>/<em></em></p>
+						</div>
+						<button type="button" class="next" title="다음"><i class="icon_right3_2"></i></button>
+					</div>
+				</div>
+				<div class="quick_menu">
+					<div>
+						<p>함께해서 <em>든든한 신용보증</em></p>
+						<span>빠르고 간편한 바로가기로 원하는 메뉴로 이동하세요</span>
+					</div>
+					<ul>
+						<li><a href="#">보증상담예약</a></li>
+						<li><a href="#">자료실</a></li>
+						<li><a href="#">질의응답</a></li>
+						<li><a href="#">경영공시</a></li>
+						<li><a href="#">조직도 안내</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main2 fullpage page">
+				<div class="inner">
+					<div class="top">
+						<div class="card_slide">
+							<div class="pc_slide">
+								<div class="slide">
+									<div class="slide_inner">
+										<a href="#">
+											<div>
+												<em>보증신청535353</em>
+												<p>비대면 보증신청</p>
+												<span>기다리지 않아도 되는<br>신속한 보증신청<br>지금 바로 확인해보세요!</span>
+											</div>
+											<img src="images/main/card_bg01.png" alt="">
+										</a>
+										<a href="#">
+											<div>
+												<em>보증상담예약2</em>
+												<p>보증상담 예약신청</p>
+												<span>지점별 예약현황을 한 번에<br>확인하고, 상담도 예약이 가능해요!</span>
+											</div>
+											<img src="images/main/card_bg02.png" alt="">
+										</a>
+										<a href="#">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner">
+										<a href="#">
+											<div>
+												<em>보증신청</em>
+												<p>비대면 보증신청</p>
+												<span>기다리지 않아도 되는<br>신속한 보증신청<br>지금 바로 확인해보세요!</span>
+											</div>
+											<img src="images/main/card_bg01.png" alt="">
+										</a>
+										<a href="#">
+											<div>
+												<em>보증상담예약2</em>
+												<p>보증상담 예약신청</p>
+												<span>지점별 예약현황을 한 번에<br>확인하고, 상담도 예약이 가능해요!</span>
+											</div>
+											<img src="images/main/card_bg02.png" alt="">
+										</a>
+										<a href="#">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner">
+										<a href="#">
+											<div>
+												<em>보증신청</em>
+												<p>비대면 보증신청</p>
+												<span>기다리지 않아도 되는<br>신속한 보증신청<br>지금 바로 확인해보세요!</span>
+											</div>
+											<img src="images/main/card_bg01.png" alt="">
+										</a>
+										<a href="#">
+											<div>
+												<em>보증상담예약2</em>
+												<p>보증상담 예약신청</p>
+												<span>지점별 예약현황을 한 번에<br>확인하고, 상담도 예약이 가능해요!</span>
+											</div>
+											<img src="images/main/card_bg02.png" alt="">
+										</a>
+										<a href="#">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+								</div>
+								<div class="btn">
+									<button type="button" class="prev" title="이전"><i class="icon_left3_2"></i></button>
+									<button class="btn-pause pause" type="button" title="멈춤"><i class="icon_stop3_2"></i></button>
+									<button class="btn-pause play" type="button" style="display: none;" title="재생"><i class="icon_play3_2"></i></button>
+									<ul></ul>
+									<div>
+										<span>1</span>
+										<p>/<em></em></p>
+									</div>
+									<button type="button" class="next" title="다음"><i class="icon_right3_2"></i></button>
+								</div>
+							</div>
+							<div class="mo_slide">
+								<div class="slide">
+									<div class="slide_inner">
+										<a href="#">
+											<div>
+												<em>보증신청535353</em>
+												<p>비대면 보증신청</p>
+												<span>기다리지 않아도 되는<br>신속한 보증신청<br>지금 바로 확인해보세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner" class="purple">
+										<a href="#" class="purple">
+											<div>
+												<em>보증상담예약2</em>
+												<p>보증상담 예약신청</p>
+												<span>지점별 예약현황을 한 번에<br>확인하고, 상담도 예약이 가능해요!</span>
+											</div>
+											<img src="images/main/card_bg02.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner" class="dark">
+										<a href="#" class="dark">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner">
+										<a href="#">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner">
+										<a href="#" class="purple">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner">
+										<a href="#" class="dark">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner">
+										<a href="#">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner">
+										<a href="#" class="purple">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+									<div class="slide_inner">
+										<a href="#" class="dark">
+											<div>
+												<em>상품현황3</em>
+												<p>보증상품현황</p>
+												<span>다양한 보증상품들을 한 자리에,<br>더 쉽고 빠르게 확인하세요!</span>
+											</div>
+											<img src="images/main/card_bg03.png" alt="">
+										</a>
+									</div>
+								</div>
+								<div class="btn">
+									<button type="button" class="prev" title="이전"><i class="icon_left3_2"></i></button>
+									<button class="btn-pause pause" type="button" title="멈춤"><i class="icon_stop3_2"></i></button>
+									<button class="btn-pause play" type="button" style="display: none;" title="재생"><i class="icon_play3_2"></i></button>
+									<ul></ul>
+									<div>
+										<span>1</span>
+										<p>/<em></em></p>
+									</div>
+									<button type="button" class="next" title="다음"><i class="icon_right3_2"></i></button>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							<section>
+								<a href="#">채용안내</a>
+								<a href="#">재단소개</a>
+							</section>
+							<ul>
+								<li>
+									<a href="#"><img src="images/main/main2_li01.png" alt="">신용보증절차</a>
+								</li>
+								<li>
+									<a href="#"><img src="images/main/main2_li02.png" alt="">자주하는 질문</a>
+								</li>
+								<li>
+									<a href="#"><img src="images/main/main2_li03.png" alt="">창업지원</a>
+								</li>
+								<li>
+									<a href="#"><img src="images/main/main2_li04.png" alt="">칭찬합니다</a>
+								</li>
+								<li>
+									<a href="#"><img src="images/main/main2_li05.png" alt="">공지사항</a>
+								</li>
+								<li>
+									<a href="#"><img src="images/main/main2_li06.png" alt="">보도자료</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="bot">
+						<div class="left">
+							<p>소기업·소상공인의<span>든든한 버팀목</span></p>
+							<ul class="com_tab">
+								<li id="tab1" class="active"><button type="button" title="선택됨">경상북도 특례보증</button></li>
+								<li id="tab2"><button type="button">시 · 군 특례보증</button></li>
+								<li id="tab3"><button type="button">정부 특례보증</button></li>
+							</ul>
+						</div>
+						<div class="right">
+							<div class="tabpanel_wrap">
+								<div id="tab1_panel" class="tabpanel active">
+									<a href="#">
+										<p>경상북도 특례보증</p>
+										<img src="images/main/main2_bj01.png" alt="">
+										<span>안내 바로가기 ></span>
+									</a>
+								</div>
+								<div id="tab2_panel" class="tabpanel">
+									<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+									<div class="slide">
+										<a href="#" class="mint">
+											<p>경북 버팀금융 특례보증</p>
+											<img src="images/main/main2_bj02.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="purple">
+											<p>경북 버팀금융 특례보증</p>
+											<img src="images/main/main2_bj02.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="blue">
+											<p>포항시 소상공인 특례보증</p>
+											<img src="images/main/main2_bj02.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="mint">
+											<p>포항시 청년 소기업 소상공인 특례보증</p>
+											<img src="images/main/main2_bj02.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="purple">
+											<p>경주시 소상공인 특례보증</p>
+											<img src="images/main/main2_bj02.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="blue">
+											<p>경주시 중·저신용 소상공인 특례보증</p>
+											<img src="images/main/main2_bj02.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="mint">
+											<p>김천시 소상공인 특례보증</p>
+											<img src="images/main/main2_bj02.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+									</div>
+									<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+								</div>
+								<div id="tab3_panel" class="tabpanel">
+									<button type="button" class="prev" title="이전"><i class="icon_left3"></i></button>
+									<div class="slide">
+										<a href="#" class="mint">
+											<p>햇살론</p>
+											<img src="images/main/main2_bj03.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="purple">
+											<p>장애인 기업 특례보증</p>
+											<img src="images/main/main2_bj03.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="blue">
+											<p>새회적경제기업 특례보증</p>
+											<img src="images/main/main2_bj03.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="mint">
+											<p>영세 관광사업자 특별금융지원 협약보증</p>
+											<img src="images/main/main2_bj03.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="purple">
+											<p>브릿지보증</p>
+											<img src="images/main/main2_bj03.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="blue">
+											<p>유망 예비창업자 사전보증</p>
+											<img src="images/main/main2_bj03.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="mint">
+											<p>착한 임대인 금융지원 특례보증</p>
+											<img src="images/main/main2_bj03.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+										<a href="#" class="purple">
+											<p>수출유망 소상공인 지원 특례보증</p>
+											<img src="images/main/main2_bj03.png" alt="">
+											<span>안내 바로가기 ></span>
+										</a>
+									</div>
+									<button type="button" class="next" title="다음"><i class="icon_right3"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main3 fullpage page">
+				<div class="inner">
+					<div class="bg_cover"></div>
+					<div class="right">
+						<div class="map_area">
+							<div class="map_img">
+								<img src="images/main/map.png?v1" alt="">
+								<img src="images/main/map01.png?v1" alt="" class="area7">
+								<img src="images/main/map02.png?v1" alt="" class="area3">
+								<img src="images/main/map03.png?v1" alt="" class="area6">
+								<img src="images/main/map04.png?v1" alt="" class="area9">
+								<img src="images/main/map05.png?v1" alt="" class="area10">
+								<img src="images/main/map06.png?v1" alt="" class="area5">
+								<img src="images/main/map07.png?v1" alt="" class="area4">
+								<img src="images/main/map08.png?v1" alt="" class="area2">
+								<img src="images/main/map09.png?v1" alt="" class="active area1">
+								<img src="images/main/map10.png?v1" alt="" class="area8">
+							</div>
+							<div class="map_txt">
+								<button type="button" class="area9">문경</button>
+								<button type="button" class="area9">예천</button>
+								<button type="button" class="area6">영주</button>
+								<button type="button" class="area6">봉화</button>
+								<button type="button" class="area2">울진</button>
+								<button type="button" class="area10">상주</button>
+								<button type="button" class="area3">안동</button>
+								<button type="button" class="area3">영양</button>
+								<button type="button" class="area3">의성</button>
+								<button type="button" class="area3">청송</button>
+								<button type="button" class="area2">영덕</button>
+								<button type="button" class="area7">김천</button>
+								<button type="button" class="area1 active">구미</button>
+								<button type="button" class="area2">포항</button>
+								<button type="button" class="area2">울릉</button>
+								<button type="button" class="area7">성주</button>
+								<button type="button" class="area1 active">칠곡</button>
+								<button type="button" class="area8">영천</button>
+								<button type="button" class="area7">고령</button>
+								<button type="button" class="area4">경산</button>
+								<button type="button" class="area5">경주</button>
+								<button type="button" class="area4">청도</button>
+							</div>
+						</div>
+					</div>
+					<ul class="left">
+						<li class="area7">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">김천지점</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										김천,성주,고령
+									</li>
+									<li>
+										<p>주소</p>
+										경북 김천시 김천로 154,(남산동 50-2)(NH농협은행 김천시지부 3층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										054-434-1310
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+						<li class="area3">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">북부센터 (안동지점)</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										안동,영양,청송,의성
+									</li>
+									<li>
+										<p>주소</p>
+										경북 안동시 문화광장길 66(삼산동 91-2번지) (NH농협은행 안동시지부 3층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										054-854-3340
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+						<li class="area6">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">영주지점</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										영주,봉화
+									</li>
+									<li>
+										<p>주소</p>
+										경북 영주시 번영로 149,(하망동 344-34) (대구은행 영주지점 2층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										054-631-8302
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+						<li class="area9">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">문경지점</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										문경,예천
+									</li>
+									<li>
+										<p>주소</p>
+										경북 문경시 중앙로 141,(점촌동 261-1) (NH농협은행 문경시지부 3층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										054-556-7404
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+						<li class="area10">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">상주지점</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										상주
+									</li>
+									<li>
+										<p>주소</p>
+										경북 상주시 상산로 260,(남성동 85-1) (NH농협은행 상주시지부 3층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										054-531-3504
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+						<li class="area5">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">경주지점</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										경주
+									</li>
+									<li>
+										<p>주소</p>
+										경주시 화랑로 67 (대구은행 경주영업부 2층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										054-777-0139
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+						<li class="area4">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">경산지점</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										경산,청도
+									</li>
+									<li>
+										<p>주소</p>
+										경북 경산시 원효로 15,(중방동 869-5) (NH농협은행 경산시지부 3층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										053-811-0793
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+						<li class="area2">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">동부센터 (포항지점)</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										포항,울진,영덕,울릉
+									</li>
+									<li>
+										<p>주소</p>
+										경북 포항시 북구 포스코대로 299,(죽도동 642-4) (신한은행 포항남금융센터 3층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										054-283-2704
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+						<li style="display: block;" class="area1">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">중부센터(구미지점)</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										구미,칠곡
+									</li>
+									<li>
+										<p>주소</p>
+										경북 구미시 백산로 136,(송정동 66번지) (NH농협은행 구미중앙지점 2층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										054-474-7120
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+						<li class="area8">
+							<h1><span>영업지점</span> 안내</h1>
+							<p>원하시는 지점을 선택하여 정보를 확인해보세요.</p>
+							<section>
+								<div class="top">
+									<p class="name">영천지점</p>
+									<button type="button" class="close"><i class="icon_close2"></i></button>
+								</div>
+								<ul class="tm_cir ver2">
+									<li>
+										<p>관할지역</p>
+										영천
+									</li>
+									<li>
+										<p>주소</p>
+										경북 영천시 시장로 45,(완산동 1072-5) (대구은행 영천영업부 3층)
+									</li>
+									<li>
+										<p>콜센터</p>
+										AI 콜센터 1588-7679
+									</li>
+									<li>
+										<p>FAX</p>
+										054-336-6900
+									</li>
+								</ul>
+								<a href="/page/10051/10031.tc">+ 자세히 보기</a>
+							</section>
+						</li>
+					</ul>
+					<div class="mo_map">
+						<h1><span>영업지점</span> 안내</h1>
+						<section>
+							<button id="area1" type="button">중부센터<br>(구미지점)</button>
+							<button id="area2" type="button">동부센터<br>(포항지점)</button>
+							<button id="area3" type="button">북부센터<br>(안동지점)</button>
+							<button id="area4" type="button">경산지점</button>
+							<button id="area5" type="button">경주지점</button>
+							<button id="area6" type="button">영주지점</button>
+							<button id="area7" type="button">김천지점</button>
+							<button id="area8" type="button">영천지점</button>
+							<button id="area9" type="button">문경지점</button>
+							<button id="area10" type="button">상주지점</button>
+						</section>
+					</div>
+				</div>
+			</div>
+			<div class="main4 fullpage page">
+				<div class="inner">
+					<div class="sns_left">
+						<div class="top">
+							<h1><span>SNS</span>소식 <em>다양한 소식을 빠르게 알려드려요</em></h1>
+							<div class="btn">
+								<button type="button" class="prev" title="이전"><i class="icon_left3_2"></i></button>
+								<button class="btn-pause pause" type="button" title="멈춤"><i class="icon_stop3_2"></i></button>
+								<button class="btn-pause play" type="button" style="display: none;" title="재생"><i class="icon_play3_2"></i></button>
+								<div>
+									<span>1</span>
+									<p>/<em></em></p>
+								</div>
+								<button type="button" class="next" title="다음"><i class="icon_right3_2"></i></button>
+							</div>
+						</div>
+						<div class="slide_wrap">
+							<div class="slide">
+								<a href="#">
+									<img src="images/main/dlatl01.png" alt="">
+									<p>
+										<span>제목이 들어갈 영역입니다.</span>
+										[2023.07.03]
+									</p>
+								</a>
+								<a href="#">
+									<img src="images/main/dlatl02.png" alt="">
+									<p>
+										<span>제목이 들어갈 영역입니다.</span>
+										[2023.07.03]
+									</p>
+								</a>
+								<a href="#">
+									<img src="images/main/dlatl01.png" alt="">
+									<p>
+										<span>제목이 들어갈 영역입니다.</span>
+										[2023.07.03]
+									</p>
+								</a>
+								<a href="#">
+									<img src="images/main/visual01.jpg" alt="">
+									<p>
+										<span>제목이 들어갈 영역입니다.</span>
+										[2023.07.03]
+									</p>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="sns_right">
+						<div class="slide">
+							<a href="#" title="새창열림" target="_blank">
+								<img src="images/main/hqdefault.jpg" alt="">
+								<img src="images/main/vod.png" alt="" class="vod_icon">
+							</a>
+						</div>
+						<div class="sns_all">
+							<a href="#"><img src="images/main/insta.png" alt=""></a>
+							<a href="#"><img src="images/main/facebook.png" alt=""></a>
+							<a href="#"><img src="images/main/youtube.png" alt=""></a>
+							<a href="#"><img src="images/main/blog.png" alt=""></a>
+						</div>
+					</div>
+					<div class="noti_left">
+						<div class="top">
+							<ul class="com_tab">
+								<li id="tab2_1" class="active"><button type="button" title="선택됨">공지사항</button></li>
+								<li id="tab2_2"><button type="button">보도자료</button></li>
+							</ul>
+							<p>다양한 소식을 빠르게 알려드려요</p>
+						</div>
+						<div class="tabpanel_wrap">
+							<div id="tab2_1_panel" class="tabpanel active">
+								<a href="#" class="more">+ 더보기</a>
+								<table class="com_table">
+									<tbody>
+										<tr>
+											<th>
+												<p>27</p>
+												<span>2023.07</span>
+											</th>
+											<td>
+												<a href="#">공지사항 제목이 들어가는 영역입니다.</a>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<p>27</p>
+												<span>2023.07</span>
+											</th>
+											<td>
+												<a href="#">공지사항 제목이 들어가는 영역입니다공지사항 제목이 들어가는 영역입니다공지사항 제목이 들어가는 영역입니다.</a>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<p>27</p>
+												<span>2023.07</span>
+											</th>
+											<td>
+												<a href="#">공지사항 제목이 들어가는 영역입니다.</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="tab2_2_panel" class="tabpanel">
+								<a href="#" class="more">+ 더보기</a>
+								<table class="com_table">
+									<tbody>
+										<tr>
+											<th>
+												<p>27</p>
+												<span>2023.07</span>
+											</th>
+											<td>
+												<a href="#">보도자료 제목이 들어가는 영역입니다.</a>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<p>27</p>
+												<span>2023.07</span>
+											</th>
+											<td>
+												<a href="#">보도자료 제목이 들어가는 영역입니다공지사항 제목이 들어가는 영역입니다공지사항 제목이 들어가는 영역입니다.</a>
+											</td>
+										</tr>
+										<tr>
+											<th>
+												<p>27</p>
+												<span>2023.07</span>
+											</th>
+											<td>
+												<a href="#">보도자료 제목이 들어가는 영역입니다.</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="noti_right">
+						<div class="top">
+							<h1><span>POPUP</span>ZONE</h1>
+							<div class="btn">
+								<button type="button" class="prev" title="이전"><i class="icon_left3_2"></i></button>
+								<button class="btn-pause pause" type="button" title="멈춤"><i class="icon_stop3_2"></i></button>
+								<button class="btn-pause play" type="button" style="display: none;" title="재생"><i class="icon_play3_2"></i></button>
+								<div>
+									<span>1</span>
+									<p>/<em></em></p>
+								</div>
+								<button type="button" class="next" title="다음"><i class="icon_right3_2"></i></button>
+							</div>
+						</div>
+						<div class="slide">
+							<a href="#"><img src="images/main/dlatl03.png" alt=""></a>
+							<a href="#"><img src="images/main/dlatl03.png" alt=""></a>
+							<a href="#"><img src="images/main/dlatl03.png" alt=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="inner banner">
+			<section>
+				<p>관련기관</p>
+				<div class="btn">
+					<button type="button" class="prev" title="이전"><i class="icon_left3_2"></i></button>
+					<button class="btn-pause pause" type="button" title="멈춤"><i class="icon_stop3_2"></i></button>
+					<button class="btn-pause play" type="button" style="display: none;" title="재생"><i class="icon_play3_2"></i></button>
+					<button type="button" class="next" title="다음"><i class="icon_right3_2"></i></button>
+				</div>
+			</section>
+			<div class="slide">
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn01.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn02.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn03.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn04.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn05.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn06.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn01.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn02.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn03.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn04.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn05.jpg" alt=""></a>
+				<a href="#" title="새창열림" target="_blank" class=""><img src="images/footer_bn06.jpg" alt=""></a>
+			</div>
+		</div>
+		<div class="dark">
+			<div class="inner">
+				<a class="color" href="#">개인정보처리방침</a>
+				<a href="#">이용약관</a>
+				<a href="#">신용정보 활용체제</a>
+				<a href="#">영상정보처리기기 운영·관리방침</a>
+				<a href="#">이메일주소무단수집거부</a>
+			</div>
+		</div>
+		<div class="inner bot">
+			<img src="images/logo.png" alt="도민을 행복하게 경제를 튼튼하게 경북신용보증재단">
+			<div>
+				<p>경북 구미시 이계북로 7,(임수동 92-30) 7층(39393)</p>
+				<span><em>대표전화</em> : 1588-7679|FAX : 054-474-7104</span>
+				<span class="mr0"><em>이메일</em> : gbsinbo1@hanmail.net</span>
+				<p class="mr0">© 2023 BY GYEONGBUK CREDIT GUARANTEE FOUNDATION All Rights Reserved.</p>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>

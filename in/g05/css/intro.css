@@ -1,0 +1,89 @@
+body{text-align: center;display: flex;flex-direction: column;}
+main{padding: 50px;flex-grow: 1;background: url(../images/intro/bg.png) no-repeat;background-position: center;background-size: auto 100%;display: flex;align-items: center;}
+.intro, .layer .wrap{width: 1500px;margin: 0 auto;}
+.top{margin-bottom: 80px;margin-top: 23px;}
+.top img{display:block;margin:0 auto;margin-bottom: 30px;}
+.top p{font-size: 2.3em;font-weight: 800;color: #004098;}
+.top span{font-size:1.5em}
+ul{display:flex;gap: 40px;}
+ul li{flex:1 0 0;}
+ul li .box{position: relative;width: 100%;display: block;border-radius: 10px;overflow: hidden;z-index: 1;color: #fff;padding: 45px 40px;text-align: left;height: 440px;display: flex;flex-direction: column;align-items: start;transition:all 0.6s;position: relative;}
+ul li.blue .box{background: #004098;background: -moz-linear-gradient(45deg, #004098 0%, #296cc9 100%);background: -webkit-linear-gradient(45deg, #004098 0%,#296cc9 100%);background: linear-gradient(45deg, #004098 0%,#296cc9 100%);}
+ul li.blue .box:before{content:"";width:100%;height:100%;background: url(../images/intro/box01_bg.png) no-repeat;left: 0;bottom: 0;position: absolute;z-index: -1;background-position: center;}
+ul li.purple .box{background: #8446e3;background: -moz-linear-gradient(45deg,  #8446e3 0%, #9d67ee 100%);background: -webkit-linear-gradient(45deg,  #8446e3 0%,#9d67ee 100%);background: linear-gradient(45deg,  #8446e3 0%,#9d67ee 100%);}
+ul li.dark .box{background: #3d3934;background: -moz-linear-gradient(45deg,  #3d3934 0%, #5b554f 100%);background: -webkit-linear-gradient(45deg,  #3d3934 0%,#5b554f 100%);background: linear-gradient(45deg,  #3d3934 0%,#5b554f 100%);}
+ul li .box:hover{transform:translateY(-30px);box-shadow:0 0 15px rgba(0,0,0,0.5);}
+ul li .box h1{font-size:1.8em;font-weight: 600;margin-bottom: 5px;}
+ul li .box p{line-height:1.2;}
+ul li .box span{border:1px solid #fff;display: inline-block;padding: 5px 20px;border-radius: 500px;width: auto;display: flex;gap: 10px;margin-top: 20px;}
+ul li .box img{position: absolute;width: 100%;left: 0;z-index: -1;bottom: 0;}
+ul li.blue .box span{background: #23559b;}
+ul li.purple .box span{background: #7133CF;}
+ul li.dark .box span{background: #2F2A25;}
+ul li.blue .box:hover span{color: #23559b;background:#fff;font-weight:600;}
+ul li.purple .box:hover span{color: #7133CF;background:#fff;font-weight:600;}
+ul li.dark .box:hover span{color: #2F2A25;background:#fff;font-weight:600;}
+ul li .box i,ul li .box em{transition:none;}
+ul li .layer{position: fixed;width: 100%;height: 100%;top: 0;left: 0;z-index: 9;display: flex;flex-direction: column;align-items: center;justify-content: center;display: none;}
+ul li .layer section{overflow-y: auto;position: relative;z-index: 99999;padding: 30px 0;width: 100%;}
+ul li .layer .wrap{display:flex;gap: 40px;align-items: center;justify-content: center;}
+ul li .layer .wrap a{flex-basis: 473px;position: relative;padding: 35px 20px;border-radius: 10px;overflow: hidden;height: 440px;word-break: keep-all;}
+ul li .layer .wrap a.sky{background:#DCEBFF;}
+ul li .layer .wrap a.purple{background:#F1E7FF;}
+ul li .layer .wrap a img{position:absolute;bottom:0;left: 0;}
+ul li .layer .wrap a p{color:#fff;border-radius:500px;margin: 0 auto;margin-bottom:20px;font-size: 1.6em;font-weight: 600;padding: 2px;width: 70%;}
+ul li.purple .layer .wrap a.sky {background: #fff url(../images/intro/reservation01_bg.png) no-repeat bottom center;background-size: 100% auto;}
+ul li.purple .layer .wrap a.purple {background: #fff url(../images/intro/reservation02_bg.png) no-repeat center;background-size: 100% 100%;}
+ul li .layer .wrap a span{font-size: 1.2em;}
+ul li .layer .wrap a.sky p{background:#004098;}
+ul li .layer .wrap a.sky span em{color:#004098;font-weight:700;}
+ul li .layer .wrap a.purple p{background:#7133CF;}
+ul li .layer .wrap a.purple span em{color:#7133CF;font-weight:700;}
+ul li .layer .close{background: #fff;z-index: 99999;border-radius: 500px;padding: 10px;font-weight: 700;width: 200px;font-size: 1.2rem;margin-top: 50px;}
+footer{color: #fff;background: #5a9fff;font-weight: 300;padding: 20px 20px;}
+
+@media(max-width: 1520px){
+    .intro, .layer .wrap{padding:0 15px;width:100%;}
+}
+@media(max-width: 1200px){
+    main{padding:50px 20px;}
+    ul{flex-direction:column;gap: 20px;}
+    ul li .box img{width:auto;height:100%;left:initial;right:0;}
+    ul li.blue .box:before{background-size: 100% auto;}
+    ul li .box{height:300px;}
+	ul li .layer .wrap{/* flex-direction:column; */}
+	ul li .layer .wrap a{flex-basis: 350px;height: 330px;}
+	ul li .layer .wrap a span{font-size: 17px;line-height: 1.2;display: block;}
+	ul li .layer .wrap a p{font-size: 23px;}
+	ul li .layer .close{font-size: 1.2rem;}
+}
+@media(max-width: 1024px){
+	main{background-size: auto 100%;background-position: 70%;}
+    ul li .box{padding: 30px 20px;height: 200px;}
+    ul li .box:hover{transform:none;}
+    .top{margin-bottom: 50px;margin-top: 0px;}
+    .top img{width:280px;}
+    .top span{font-size:20px;}
+    .top p{font-size: 29px;}
+	ul li .layer .wrap a p{font-size:18px;}
+}
+@media(max-width: 800px){
+	ul li .layer{flex-direction: column;}
+	ul li .layer .wrap{flex-direction:column;flex-wrap:wrap;gap: 20px;}
+	ul li .layer .wrap a{min-width: 260px;height: auto;width: 50%;flex-basis: auto;padding: 0;padding-bottom: 0;padding-top: 20px;}
+	ul li .layer .wrap a img{width: 100%;max-width: none;left: 50%;transform: translateX(-50%);position: static;transform: none;}
+	ul li.purple .layer .wrap a{/* padding-bottom: 180px; */}
+	ul li .layer .wrap a p{font-size:17px;margin-bottom: 13px;}
+	ul li .layer .wrap a span{display:block;padding:0 10px;padding-bottom: 10px;font-size: 15px;letter-spacing: -1.75px;}
+	ul li .layer .close{margin-top:20px;}
+	ul li.purple .layer .wrap a img{width: 80%;display: block;margin: 0 auto;}
+}
+@media(max-width: 400px){
+    ul li .box img{width:150px;height:auto;}
+    .intro{padding:0;}
+    .top{margin-bottom: 30px;margin-top: 0px;}
+    ul li .box span{margin-top:10px;}
+	
+	ul li .layer .wrap a{/* padding-bottom: 170px; */}
+	ul li.purple .layer .wrap a{/* padding-bottom: 155px; */}
+}

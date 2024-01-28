@@ -1,0 +1,170 @@
+main{overflow: hidden;}
+
+.main1 {background: url(../images/main/bg01.jpg) no-repeat center 100%;background-size: 100% 58%;padding-bottom: 70px;} 
+.main1 .visual>img {width: 100%; } 
+.main1 .visual {position: relative;display: flex;align-items: center;justify-content: center;background-size: 100%; } 
+.main1 .visual .inner {position: absolute;transform: translate(-50%, -50%);left: 50%;top: 50%; } 
+.main1 .visual .inner img {width: 33%; } 
+.main1 #youtube {position: absolute;width: 40%;right: 15%;top: 50%;transform: translateY(-50%);padding-top: 23.7%; } 
+.main1 #youtube embed {width: 100%;position: absolute;top: 0;height: 100%; } 
+
+.main_tit{font-size: 39px;font-weight:600;text-align:center;padding: 70px 0;padding-bottom: 50px;}
+
+.schedule .com_tab li a,.schedule .com_tab li button{width: 240px;font-size:25px;}
+.schedule .tabpanel{width: calc(100% + 29px);transform: translateX(-6px);}
+.schedule .tabpanel .slick-list{transform: translateX(-4px);/* width: calc(100% + 10px); */padding-right: 10px;padding-left: 0px;}
+.schedule .tabpanel .slide li a{display: block;background: #fff;text-align: center;padding-top: 35px;border-radius: 13px;box-shadow: 5px 5px 12px rgba(0,0,0,0.15);margin: 20px 10px;overflow: hidden;border: 1px solid #eee}
+.schedule .tabpanel .slide li a:hover{outline:3px solid #2E3092;}
+.schedule .tabpanel .slide li a p{border-radius: 500px;color: #fff;background: #009eb4;font-size: 20px;font-weight: 600;display: inline-block;padding: 3px 20px 1px;}
+.schedule .tabpanel .slide .slick-track>div:nth-of-type(4n+2) a p{background: #EE2D23;}
+.schedule .tabpanel .slide .slick-track>div:nth-of-type(4n+3) a p{background: #5C2D91;}
+.schedule .tabpanel .slide .slick-track>div:nth-of-type(4n+4) a p{background: #FBA833;}
+.schedule .tabpanel .slide li a h1{font-weight: 600;font-size: 25px;padding: 0 15px;margin-top: 20px;height: 70px;display: -webkit-box;overflow: hidden;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2;margin-bottom: 20px;}
+.schedule .tabpanel .slide li a section{padding: 0 30px;background: #fffae5;height: 60px;display: flex;align-items: center;justify-content: center;}
+.schedule .tabpanel .slide li a section span{display: -webkit-box;overflow: hidden;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
+.schedule .tabpanel .slide li a section img{display: inline-block!important;vertical-align: middle;margin-right: 7px;}
+
+.slick-dots{display:none!important;}
+.btn button{background: #03398B;border-radius: 500px;width: 30px;height: 30px;display: inline-flex;align-items: center;justify-content: center;font-weight: 400;color: #fff;vertical-align: middle;font-size: 13px;}
+.btn button:hover{background: #FBA833;}
+.btn button img{display: inline-block;}
+.btn{text-align: center;margin-top: 40px;}
+.btn div{display: inline-block;width: 70px;font-size: 20px;vertical-align: middle;}
+.btn span{display: inline-block;color: #2e3092;font-weight: 600;}
+.btn p{display: inline-block;}
+
+.main2{background: url(../images/main/bg02.png);background-size: 100%;padding-bottom: 60px;}
+.main2 .tabpanel .slick-list{transform: translateX(-4px);/* width: calc(100% + 10px); */padding-right: 10px;padding-left: 0px;}
+.main2 .tabpanel .slide li a{display: block;background: #fff;text-align: center;border-radius: 13px;box-shadow: 5px 5px 12px rgba(0,0,0,0.15);margin: 20px 10px;overflow: hidden;border: 1px solid #eee;}
+.main2 .tabpanel .slide li a:hover{outline:3px solid #2E3092;}
+.main2 .tabpanel .slide li a img{padding: 20px;box-sizing: border-box;width: 100%;aspect-ratio: 3/2.23;object-fit: cover;padding-bottom: 0;}
+.main2 .tabpanel .slide li a p.category{border-radius: 500px;color: #fff;font-size: 20px;font-weight: 600;display: inline-block;padding: 3px 30px 1px;transform: translateY(-15px);}
+.main2 .tabpanel .slide li a p.txt{padding: 0 15px;height: 44px;display: -webkit-box;overflow: hidden;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2;margin-bottom: 20px;}
+.main2 .tabpanel .slide li a h1{font-weight:600;font-size: 25px;padding: 0 15px;margin-bottom: 15px;margin-top: 7px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;-o-text-overflow: ellipsis;-ms-text-overflow: ellipsis;}
+.main2 .tabpanel .slide li a span{padding: 0 30px;background: #D9F2ED;height: 60px;display: flex;align-items: center;justify-content: center;font-size: 19px;}.schedule .tabpanel .slide li a section{padding: 0 30px;background: #FFFAE5;height: 60px;display: flex;align-items: center;justify-content: center;}
+
+.notice{display: grid;grid-template-columns: 53% calc(47% - 20px);gap:20px;margin-bottom: 50px;}
+.notice>div{background: #fff;border-radius: 10px;box-shadow: 5px 5px 12px rgba(0,0,0,0.15);border: 1px solid #eee;padding: 25px;}
+.notice .com_tab{position: relative;width: 100%;justify-content: start;display: block;margin-bottom: 20px;}
+.notice .com_tab li{display:inline-block;position: static;margin-right: 5px;}
+.notice .com_tab li button{font-weight: 500;font-size: inherit;min-width: 110px;}
+.notice .com_tab li a,.notice .right section .btn a{background: #009EB4;border: none;position: absolute;min-width: auto;width: 30px;font-size: 10px;height: 30px;font-weight: 400;display: flex;align-items: center;justify-content: center;right: 0;top: 50%;transform: translateY(-50%);display: none;padding-bottom: 6px;box-shadow: none;}
+.notice .com_tab li a:hover, .notice .right section .btn a:hover{background: #FBA833;}
+.notice .com_tab li.active a{display:flex;}
+.notice .left .tabpanel a{display: block;border-top: 1px solid #ccc;padding: 20px 10px;}
+.notice .left .tabpanel a:hover h1{color:#2E3092;}
+.notice .left .tabpanel section{display: flex;gap: 10px;align-items: center;}
+.notice .left .tabpanel section span{background: #FBA833;color: #fff;border-radius: 500px;padding: 0 10px 1px;flex-shrink: 0;}
+.notice .left .tabpanel section h1{font-size:20px;flex-grow: 1;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;-o-text-overflow: ellipsis;-ms-text-overflow: ellipsis;/* width: 100%; */}
+.notice .left .tabpanel a p{display: -webkit-box;overflow: hidden;text-overflow: ellipsis;-webkit-box-orient: vertical;-webkit-line-clamp: 2;margin: 12px 0;height: 44px;}
+.notice .left .tabpanel a em{display: block;font-size: 13px;}
+.notice .left .tabpanel a em img{display: inline-block;vertical-align: sub;margin-right: 10px;width: 17px;}
+.notice .right section{display: flex;justify-content: space-between;padding: 19px 0;border-bottom: 1px solid #ccc;margin-bottom: 20px;padding-top: 5px;}
+.notice .right section .btn{margin-top: 0;}
+.notice .right section .btn button{margin-right:5px;}
+.notice .right section .btn a{display: inline-flex;position: static;color: #fff;border-radius: 500px;transform: none;vertical-align: middle;padding: 0;}
+.notice .right section h1{font-weight:500}
+.notice .right .slide{overflow:hidden}
+.notice .right .slide a{padding-left: 30px;}
+.notice .right .slide a:hover{color:#2e3092;}
+.notice .right .slide a p{width:90%;margin:0 auto;margin-top: 15px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;-o-text-overflow: ellipsis;-ms-text-overflow: ellipsis;text-align: center;}
+.notice .right .slide a img{width: 100%;height: 246px;border-radius: 15px;}
+.notice .right .slide .slick-list{width: calc(100% + 30px);transform: translateX(-30px);}
+
+.main3{background: url(../images/main/bg03.png) no-repeat;background-size: 100%;background-position: 30% bottom;padding-bottom: 130px;}
+.map .root_daum_roughmap{width: 100%;padding-bottom: 30px;}
+.map .root_daum_roughmap .wrap_map{width: 80%;height: 500px;margin: 0 auto;border-radius: 10px;overflow: hidden;box-shadow: 5px 5px 12px rgba(0,0,0,0.15);}
+.map .root_daum_roughmap .wrap_controllers{display: none;}
+.map>ul{width: 80%;margin: 0 auto;color: #fff;margin-top: 10px;}
+.map>ul{display: grid;grid-template-columns: 1fr 1fr;gap: 10px;}
+.map>ul>li{padding: 20px;text-align: center;border-radius: 10px;box-shadow: 5px 5px 12px rgba(0,0,0,0.15);padding-top: 15px;}
+.map>ul>li p{font-size:25px;margin-bottom: 20px;}
+.map>ul>li p img{vertical-align: bottom;margin-right: 10px;}
+.map>ul>li:nth-of-type(1){background: #2E3092;}
+.map>ul>li:nth-of-type(2){background: #5C2D91;}
+.map li ul{display: block;margin:0;}
+.map li ul li{margin: 7px 0;}
+.map ul.tm_cir li::before{background:#fff;}
+.map li ul li em{position:relative;padding-left: 10px;}
+.map li ul li em:before{content:"";width: 3px;height: 3px;background:#fff;position:absolute;left:0;top: 7px;border-radius: 100px;}
+
+.main4{background: #009eb4;position:relative;padding-top: 50px;}
+.main4 .inner{padding:50px 10%;display:grid;grid-template-columns: 1fr auto;align-items: center;position: relative;padding-top: 10px;gap: 5%;}
+.main4::before{content: "";width: 100%;position: absolute;height: 500px;background: url(../images/main/bg04.png) no-repeat;top: -40px;max-height: 100%;background-size: 100%;}
+.main4 ul li{display: grid;grid-template-columns: 120px 1fr;gap: 20px;font-size: 22px;margin: 25px 0;align-items: center;color: #fff;}
+.main4 ul li span{background: #2e3092;color: #fff;text-align: center;padding: 3px 24px 1px;border-radius: 500px;text-align-last: justify;}
+.main4 ul li p img{display:block;}
+
+@media(max-width: 1200px){
+    .map .root_daum_roughmap .wrap_map{width:100%;}
+    .map>ul{width:100%;}
+    .main4 .inner{padding-left: 15px;padding-right: 15px;}
+}
+@media(max-width: 1024px){
+	
+    .main_tit{font-size: 29px;padding: 50px 0;padding-bottom: 30px;}
+	.schedule .com_tab li a, .schedule .com_tab li button{font-size: 20px;width: 150px;}
+	.schedule .tabpanel .slide li a p{font-size: 16px;}
+	.schedule .tabpanel .slide li a h1{font-size: 18px;height: 50px;}
+	.btn div{font-size: 16px;}
+	.main2 .tabpanel .slide li a p.category{font-size: 16px;}
+	.schedule .tabpanel .slide li a{padding-top:25px;}
+	.main2 .tabpanel .slide li a h1{font-size: 18px;margin-bottom: 10px;margin-top: 0;}
+	.main2 .tabpanel .slide li a span{font-size:15px;height: 40px;}
+	.notice .com_tab li button{font-size:15px;min-width: 80px;}
+	.notice .left .tabpanel section h1{font-size: 18px;}
+	.notice .left .tabpanel a p{height:35px;}
+	.main4 ul li{grid-template-columns: 100px 1fr;font-size:18px;text-align: left;}
+	.main4 ul li span{padding: 2px 17px;}
+	.main4 .inner{display: block;text-align: center;}
+	.main4 .inner>img{display: block;margin: 0 auto;width: 50%;max-width: 300px;}
+	.main4 ul{display: inline-block;margin: 0 auto;margin-top: 30px;}
+	.notice .right .slide a img{height: 220px;object-fit: cover;}
+	.notice .right .slide a{padding-left:10px;}
+	.notice .right .slide .slick-list{width: calc(100% + 10px);transform: translateX(-10px);}
+	.main1 .visual .inner img{display:block;margin:0 auto;width:50%}
+	.main1 .visual .inner{top:50px;transform: none;width: 100%;left: 0;}
+	.main1 .visual>img{aspect-ratio: 0.97;object-fit: cover;object-position: bottom;}
+}
+@media(max-width:800px){
+	.schedule .com_tab li{flex: 1 0 0;}
+	.schedule .com_tab li a, .schedule .com_tab li button{width:100%}
+	.notice{display: block;margin-bottom: 20px;}
+	.notice>div.right{margin-top:30px;}
+	.map>ul>li p{font-size:20px;}
+	.map>ul>li p img{width:50px;}
+	.main2 .com_tab li{width: 30%;}
+	.main2 .com_tab{flex-wrap: wrap;}
+	.main2 .com_tab li a, .main2 .com_tab li button{width: 100%;min-width: auto;}
+	.inner.blank{padding: 0;}
+	.schedule .tabpanel .slide li a,.main2 .tabpanel .slide li a{width: 220px;}
+	.schedule .tabpanel,.main2 .tabpanel{width: 100%;transform: none;}
+	.schedule .tabpanel .slick-list,.main2 .tabpanel .slick-list{padding: 0;transform: none;}
+	.notice .right .slide a img{aspect-ratio: 3/2.02;height: auto;}
+	.map>ul{grid-template-columns:1fr}
+	.main2{padding-bottom:40px;}
+	.main1{padding-bottom:40px;}
+	.map .root_daum_roughmap .wrap_map{height:400px;}
+}
+@media(max-width:600px){
+	.main1 .visual>img{height:auto;aspect-ratio: auto;}
+	.main1 .visual .inner{top:8%}
+	.main1 .visual .inner img{width:80%;}
+}
+@media(max-width:500px){
+    .main_tit{font-size: 25px;}
+	.main2 .com_tab{gap:7px;}
+	.btn{margin-top:20px;}
+	.main4 ul li{font-size:16px;display: block;margin: 10px 0;margin-bottom: 30px;}
+	.main4 ul li img{width:80%;}
+	.main4 ul li span{width:100px;display:inline-block;margin-bottom:10px;}
+	.main4 .inner{padding-bottom:20px;padding-top:0;}
+	.main4::before{top:-20px;}
+	.main3{padding-bottom:80px;}
+	
+	.schedule .com_tab li{flex: 1 1 100%;}
+	.schedule .com_tab li a, .schedule .com_tab li button{font-size:15px;width: 100%;letter-spacing: -1px;min-width: auto;}
+}
+@media(max-width:450px){
+	.main2 .tabpanel .slide li a p.txt{height:40px;}
+}
